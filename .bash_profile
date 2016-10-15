@@ -1,4 +1,5 @@
-##
+## Beau Bouchard 
+## .bash_profile
 
 # Git branch in prompt
 
@@ -24,3 +25,8 @@ export LSCOLORS=ExFxBxDxCxegedabagacad
 ## Aliases
 alias ls='ls -GFh'
 alias ll='ls -la'
+alias ..="cd .."
+alias fhere="find . -name "
+alias df="df -Tha --total"
+alias ps="ps auxf"
+alias jf="ps -ef"
