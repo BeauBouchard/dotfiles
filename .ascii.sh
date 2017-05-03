@@ -1,0 +1,37 @@
+
+# Soul Cycle Ascii art by Beau :D
+echo "                       \`.:::-\`                      ";
+echo "                  \`:+ydmmmmmmmdyo/-\`                ";
+echo "                \`/ymmmmmmmmmmmmmmmmmmy+\`             ";
+echo "              \`+dmmmmmmmmmmmmmmmmmmmmmmmo\`           ";
+echo "              ymmmmmmmmmmmmmmmmmmmmmmmmmmh.          ";
+echo "             -mmmmmmmmmmmmmmmmmmmmmmmmmmmmd\`         ";
+echo "             ymd+mmmmmmmmmmmmmmmmmmmmmmmh.sh         ";
+echo "             omh.mmmmmmmmmmmmmmmmmmmmmmm+/my         ";
+echo "            .:--yddddmmmmmmmmmmmmdddmmmo\`o:         ";
+echo "             :s+\`\`\`\`\`-+sdmmmmho/.\` \`.-+hd\`\`       ";
+echo "            .y:         ymmmm:         .h.           ";
+echo "            \`dy        /mmdmmh.       .ys\`          ";
+echo "           \`:/do:---:ohmm+\`-hmdy/----/hmmo          ";
+echo "           /my+ssssymmmmo   \`dmmmmmmmmmmmy          ";
+echo "       .::. :ydhyhdhommm:\`\`  smmmmmmmmmm+\` .::.     ";
+echo "      -dmmd:  \`.\`\`-hmmmmdhhhhmmmmmy-://-  -dmmd/    ";
+echo "    \`/hmmmmms:\`    \`ymmmmmmmmmmmmy\`    \`-odmmmmd/.  ";
+echo "   smmmmmmmmmho-.\` \`+yhdmmmmdhyo\` \`.-+hmmmmmmmmmy  ";
+echo "   \`shdmmddmmmmmdhyo:--.----..-:+shdmmmmmddmmmds.  ";
+echo "      \`.--..-/oyhdmmmmmhy+--+shmmmmmdhyo/-..---\`    ";
+echo "               \`.-:+ymmmmmmmmmmy+:-.\`              ";
+echo "             \`.-/sydmmmdhydmmmdys+:.\`             ";
+echo "      \`\`\`\`.-/oyhmmmdhyo/-.  \`-:oyhdmmmhyo/-.\`\`\`\`    ";
+echo "     .yhhhhmmmmdhs+:.\`            \`.-/shdmmmmdhhhy-  ";
+echo "     +mmmmmdh+:.                        .-+ydmmmmms  ";
+echo "     hmmmms.                                .ommmmm\` ";
+echo "     /hdds                                    odddo";
+echo "  _____               _    _____              _       ";
+echo " / ____|             | |  / ____|            | |      ";
+echo "| (___   ___   _   _ | | | |     _   _   ___ | |  ___ ";
+echo " \___ \ / _ \ | | | || | | |    | | | | / __|| | / _ \\";
+echo " ____) | (_) || |_| || | | |____| |_| || (__ | ||  __/";
+echo "|_____/ \___/  \__,_||_|  \_____|\__, | \___||_| \___|";
+echo "                                 __/ /            ";
+echo "                                |___/             ";
