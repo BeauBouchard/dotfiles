@@ -67,7 +67,6 @@ runonce(){
   fi
 }
 
-
 # Other Exports
 
 
@@ -77,12 +76,9 @@ alias ll='ls -la'
 alias ..="cd .."
 alias fhere="find . -name "
 alias df="df -Tha --total"
-alias ps="ps auxf"
-alias jf="ps -ef"
 
 # CD Project base home
 alias cdh="cd ~/Projects/"
-
 alias gc="git checkout"
 alias gcb="git checkout -b"
 alias gf="git fetch"
@@ -95,7 +91,6 @@ alias pushit="git push origin head"
 alias grc="git rebase --continue"
 alias gra="git rebase --abort"
 alias grs="git rebase --skip"
-
 
 # Make sure 256 color terminals are enabled
 export TERM=xterm-256color
