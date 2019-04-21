@@ -96,6 +96,6 @@ alias grs="git rebase --skip"
 export TERM=xterm-256color
 
 # PS1
-export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$(parse_git_branch)\$ "
+export PS1="\[\033[38;5;033m\]\u\[\033[0m\]@\[\033[38;5;119m\]\h\[\033[0m\]:\[\033[38;5;184m\]\w\[\033[0m\]\[\033[38;5;255m\]\$(parse_git_branch)\$\[\033[0m\]: "
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
