@@ -13,15 +13,6 @@ readonly PURPLE="\033[0;35m"       # Purple
 readonly CYAN="\033[0;36m"         # Cyan
 readonly WHITE="\033[0;37m"        # White
 
-# echoc - echo color adds a color wrapper then resets
-echoc() {
-  echo -e "$1$2${RESET}"
-}
-
-# git branch in prompt
-parse_git_branch() {
-      git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
-}
 
 # maconly
 wallpaper() {
@@ -81,3 +72,96 @@ runonce(){
       fi
   fi
 }
+
+# echo/color - echo color adds a color wrapper then resets
+# usage: echo/color <ANSII color code> <message to add color to>
+# example:
+#   echo/color "\033[0;31m" "THIS MESSAGE IS RED"
+echo/color() {
+  echo -e "$@${RESET}"
+}
+
+# echo/warn - echo with yellow warning color wrapper
+# usage: echo/warn <message to add color to>
+# example:
+#   echo/warn "THIS MESSAGE IS YELLOW"
+echo/warn() {
+  echo/color ${YELLOW} $@
+}
+
+# echo/alert - echo with red alert color wrapper
+# usage: echo/alert <message to add color to>
+# example:
+#   echo/alert "THIS MESSAGE IS RED"
+echo/alert() {
+  echo/color ${RED} $@
+}
+
+# echo/success - echo with green alert color wrapper
+# usage: echo/success <message to add color to>
+# example:
+#   echo/success "THIS MESSAGE IS GREEN"
+echo/success() {
+  echo/color ${GREEN} $@
+}
+
+# input decision for user, useful for assigning variiable values
+# usage: prompt/user <prompt message> [fallback value*]
+#   * uses fallback/default value if no input recieved
+# example:
+#   name=$(input/user  "what is your name?")
+#   port=$(input/user  "what port for server?" 8080)
+input/user() {
+  local input=
+  # set text prompt value
+  local prompt="${1:-value}"
+  # set default value
+  local default="$2"
+  [ -z "$default" ] || prompt+=" [$default]"
+
+  # convert escape sequences in prompt to ansi codes
+  prompt="$(echo -e -n "$prompt : ")"
+
+  while [ -z "$input" ]; do
+    if [ -t 0 ]; then
+      # user input
+      read -p "$prompt" input </dev/tty
+    else
+      # piped input
+      read input
+    fi
+
+    [[ -n "$default" && -z "$input" ]] && input="$default"
+    [ -z "$input" ] && echo/warn "invalid input"
+
+  done
+  echo "$input"
+}
+
+# input/confirm - simple boolean decision to confirm
+# usage: input/confirm [message]
+# examples:
+#  input/confirm "are you sure?" || exit 0
+input/confirm() {
+  while true; do
+    case $(input/user "${@:-Continue?} [y/n]") in
+      [yY]) return 0 ;;
+      [nN]) return 1 ;;
+      *) echo/warn "invalid input"
+    esac
+  done
+}
+
+
+# GIT
+
+# git branch in prompt
+git/branch() {
+  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
+
+main() {
+  echo/success "shell utils loaded!"
+}
+
+main
