@@ -92,12 +92,23 @@ input/confirm() {
   done
 }
 
-# git branch in prompt
+# git/branch - returns the current git branch for the current environment
+# usage: git/branch
+# examples:
+#  git/branch
+# returns: "(main)"
+# * Note: branch name is surrouned by "()" in return string
 git/branch() {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
 
 # getAbsolutePath
+# path/abs - returns the absolute path from ran directory
+# usage: path/abs
+# examples:
+#  path/abs
+# returns: "/home/root/Pictures/cats/orange/kittens/"
+# * NOTE: returned string starts and ends with "/"
 path/abs(){
   [[ -d $1 ]] && { cd "$1"; echo "$(pwd -P)"; } ||
   { cd "$(dirname "$1")"; echo "$(pwd -P)/$(basename "$1")"; }
