@@ -21,6 +21,14 @@ echo/color() {
   echo -e "$@${RESET}"
 }
 
+# echo/color/n - same as color, but has no endline
+# usage: echo/color/n <ANSII color code> <message to add color to>
+# example:
+#   echo/color/n "\033[0;31m" "THIS MESSAGE IS RED"
+echo/color/n() {
+  echo -en "$@${RESET}"
+}
+
 # echo/warn - echo with yellow warning color wrapper
 # usage: echo/warn <message to add color to>
 # example:
