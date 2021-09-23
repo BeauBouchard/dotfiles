@@ -1,7 +1,7 @@
 ## Beau Bouchard
+
 ## .bash_profile
 
-source ./.shell_helpers/utils.sh
-source ./.shell_helpers/setup/alias/index.sh
-source ./.shell_helpers/setup/ps1.sh
-
+source ~/.shell/utils.sh
+source ~/.shell/setup/alias/index.sh
+source ~/.shell/setup/ps1.sh
