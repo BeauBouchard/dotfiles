@@ -1,4 +1,5 @@
 echo "starting to take over system..."
+echo $PWD
 rm -Rf ~/.shell/ 
 rm ~/.bash_profile
 rm -Rf ~/.shell_helpers
