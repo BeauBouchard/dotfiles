@@ -6,4 +6,4 @@ cd ~/.shell/setup && wget https://raw.githubusercontent.com/BeauBouchard/dotfile
 cd ~/.shell/alias && wget https://raw.githubusercontent.com/BeauBouchard/dotfiles/main/.shell_helpers/setup/alias/index.sh
 cd ~ && rm .bash_profile && wget https://raw.githubusercontent.com/BeauBouchard/dotfiles/main/.bash_profile
 
-source ~/.bash_profile
+. ~/.bash_profile
