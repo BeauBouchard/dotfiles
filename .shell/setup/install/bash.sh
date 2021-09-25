@@ -8,4 +8,4 @@ cd ~/.shell/setup/alias && { curl -O -s https://raw.githubusercontent.com/BeauBo
 cd ~ && { curl -O -s https://raw.githubusercontent.com/BeauBouchard/dotfiles/main/.bashrc ;} && \
 cd ~ && { curl -O -s https://raw.githubusercontent.com/BeauBouchard/dotfiles/main/.bash_profile ;} && \
 . ~/.bash_profile && \
-ALERT "System Takeover Complete!" 
+echo_alert "System Takeover Complete!" 
