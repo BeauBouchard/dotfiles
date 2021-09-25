@@ -17,7 +17,7 @@ readonly WHITE="\033[0;37m"        # White
 # usage: echo/color <ANSII color code> <message to add color to>
 # example:
 #   echo/color "\033[0;31m" "THIS MESSAGE IS RED"
-echo/color() {
+echo:color() {
   echo -e "$@${RESET}"
 }
 
@@ -25,7 +25,7 @@ echo/color() {
 # usage: echo/color/n <ANSII color code> <message to add color to>
 # example:
 #   echo/color/n "\033[0;31m" "THIS MESSAGE IS RED"
-echo/color/n() {
+echo:color/n() {
   echo -en "$@${RESET}"
 }
 
@@ -33,24 +33,24 @@ echo/color/n() {
 # usage: echo/warn <message to add color to>
 # example:
 #   echo/warn "THIS MESSAGE IS YELLOW"
-echo/warn() {
-  echo/color ${YELLOW} $@
+echo:warn() {
+  echo:color ${YELLOW} $@
 }
 
 # echo/alert - echo with red alert color wrapper
 # usage: echo/alert <message to add color to>
 # example:
 #   echo/alert "THIS MESSAGE IS RED"
-echo/alert() {
-  echo/color ${RED} $@
+echo:alert() {
+  echo:color ${RED} $@
 }
 
 # echo/success - echo with green alert color wrapper
 # usage: echo/success <message to add color to>
 # example:
 #   echo/success "THIS MESSAGE IS GREEN"
-echo/success() {
-  echo/color ${GREEN} $@
+echo:success() {
+  echo:color ${GREEN} $@
 }
 
 # input decision for user, useful for assigning variiable values
@@ -90,7 +90,7 @@ input/user() {
 # usage: input/confirm [message]
 # examples:
 #  input/confirm "are you sure?" || exit 0
-input/confirm() {
+input:confirm() {
   while true; do
     case $(input/user "${@:-Continue?} [y/n]") in
       [yY]) return 0 ;;
@@ -106,7 +106,7 @@ input/confirm() {
 #  git/branch
 # returns: "(main)"
 # * Note: branch name is surrouned by "()" in return string
-git/branch() {
+git:branch() {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
 
@@ -117,7 +117,7 @@ git/branch() {
 #  path/abs
 # returns: "/home/root/Pictures/cats/orange/kittens/"
 # * NOTE: returned string starts and ends with "/"
-path/abs(){
+path:abs(){
   [[ -d $1 ]] && { cd "$1"; echo "$(pwd -P)"; } ||
   { cd "$(dirname "$1")"; echo "$(pwd -P)/$(basename "$1")"; }
 }
