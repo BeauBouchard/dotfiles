@@ -4,7 +4,7 @@
 export TERM=xterm-256color
 
 
-export PS1="\[\033[38;5;033m\]\u\[\033[0m\]@\[\033[38;5;119m\]\h\[\033[0m\]:\[\033[38;5;184m\]\w\[\033[0m\]\[\033[38;5;255m\]\$(git/branch)\$\[\033[0m\]: "
+export PS1="\[\033[38;5;033m\]\u\[\033[0m\]@\[\033[38;5;119m\]\h\[\033[0m\]:\[\033[38;5;184m\]\w\[\033[0m\]\[\033[38;5;255m\]\$(git:branch)\$\[\033[0m\]: "
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
 
