@@ -1,6 +1,4 @@
-## Beau Bouchard
-
-## .bash_profile
+## .bashrc
 
 source ~/.shell/utils.sh
 source ~/.shell/setup/alias/index.sh
