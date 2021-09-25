@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 echo "starting to take over system..."
 echo $PWD
 rm -Rf ~/.shell/ 
