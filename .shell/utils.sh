@@ -131,6 +131,10 @@ git_branch() {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
 
+gmail() { 
+  curl -u "$1" --silent "https://mail.google.com/mail/feed/atom" | sed -e 's/</fullcount.*/n/' | sed -e 's/.*fullcount>//'
+}
+
 # getAbsolutePath
 # path/abs - returns the absolute path from ran directory
 # usage: path/abs
