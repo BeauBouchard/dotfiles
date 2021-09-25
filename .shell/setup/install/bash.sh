@@ -8,7 +8,4 @@ cd ~/.shell/setup/alias && { curl -O -s https://raw.githubusercontent.com/BeauBo
 cd ~ && { curl -O -s https://raw.githubusercontent.com/BeauBouchard/dotfiles/main/.bashrc ;} && \
 cd ~ && { curl -O -s https://raw.githubusercontent.com/BeauBouchard/dotfiles/main/.bash_profile ;} && \
 . ~/.bash_profile && \
-echo_alert "Standard Bash Shell Loaded" && sleep 1  && \
-echo_warn "ReWrite Kernel?" && sleep 1 && \
-echo_color_n ${BWHITE}${ONGREEN}[Y]{BWHITE$}{ONBLACK}[N]  && sleep 1 && \
-busy & sleep 5 ; kill $!
+echo_alert "Standard Bash Shell Loaded"
