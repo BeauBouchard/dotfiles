@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
 # reset
-readonly RESET="\033[0m"       # Text Reset
+readonly RESET="\033[0m"           # Text Reset
+NC="\e[m"                          # Color Reset
 
 # color variables
 readonly BLACK="\033[0;30m"        # Black
@@ -12,6 +13,26 @@ readonly BLUE="\033[0;34m"         # Blue
 readonly PURPLE="\033[0;35m"       # Purple
 readonly CYAN="\033[0;36m"         # Cyan
 readonly WHITE="\033[0;37m"        # White
+
+# bold
+readonly BBLACK='\e[1;30m'         # Black
+readonly BRED='\e[1;31m'           # Red
+readonly BGREEN='\e[1;32m'         # Green
+readonly BYELLOW='\e[1;33m'        # Yellow
+readonly BBLUE='\e[1;34m'          # Blue
+readonly BPURPLE='\e[1;35m'        # Purple
+readonly BCYAN='\e[1;36m'          # Cyan
+readonly BWHITE='\e[1;37m'         # White
+
+# background
+readonly ONBLACK='\e[40m'       # Black
+readonly ONRED='\e[41m'         # Red
+readonly ONGREEN='\e[42m'       # Green
+readonly ONYELLOW='\e[43m'      # Yellow
+readonly ONBLUE='\e[44m'        # Blue
+readonly ONPURPLE='\e[45m'      # Purple
+readonly ONCYAN='\e[46m'        # Cyan
+readonly ONWHITE='\e[47m'       # White
 
 # echo/color - echo color adds a color wrapper then resets
 # usage: echo/color <ANSII color code> <message to add color to>
@@ -34,7 +55,7 @@ echo:color:n() {
 # example:
 #   echo/warn "THIS MESSAGE IS YELLOW"
 echo:warn() {
-  echo:color ${YELLOW} $@
+  echo:color ${BWHITE}${ONYELLOW}$@
 }
 
 # echo/alert - echo with red alert color wrapper
@@ -42,7 +63,7 @@ echo:warn() {
 # example:
 #   echo/alert "THIS MESSAGE IS RED"
 echo:alert() {
-  echo:color ${RED} $@
+  echo:color ${BWHITE}${ONRED} $@
 }
 
 # echo/success - echo with green alert color wrapper
@@ -50,7 +71,7 @@ echo:alert() {
 # example:
 #   echo/success "THIS MESSAGE IS GREEN"
 echo:success() {
-  echo:color ${GREEN} $@
+  echo:color ${BWHITE}${ONGREEN} $@
 }
 
 # input decision for user, useful for assigning variiable values
@@ -80,7 +101,7 @@ input:user() {
     fi
 
     [[ -n "$default" && -z "$input" ]] && input="$default"
-    [ -z "$input" ] && echo/warn "invalid input"
+    [ -z "$input" ] && echo:warn "invalid input"
 
   done
   echo "$input"
@@ -92,7 +113,7 @@ input:user() {
 #  input/confirm "are you sure?" || exit 0
 input:confirm() {
   while true; do
-    case $(input/user "${@:-Continue?} [y/n]") in
+    case $(input:user "${@:-Continue?} [y/n]") in
       [yY]) return 0 ;;
       [nN]) return 1 ;;
       *) echo/warn "invalid input"
