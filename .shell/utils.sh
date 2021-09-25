@@ -2,7 +2,7 @@
 
 # reset
 readonly RESET="\033[0m"           # Text Reset
-readonly NC="\e[m"                          # Color Reset
+readonly NC="\e[m"                 # Color Reset
 
 # color variables
 readonly BLACK="\033[0;30m"        # Black
@@ -25,14 +25,14 @@ readonly BCYAN='\e[1;36m'          # Cyan
 readonly BWHITE='\e[1;37m'         # White
 
 # background
-readonly ONBLACK='\e[40m'       # Black
-readonly ONRED='\e[41m'         # Red
-readonly ONGREEN='\e[42m'       # Green
-readonly ONYELLOW='\e[43m'      # Yellow
-readonly ONBLUE='\e[44m'        # Blue
-readonly ONPURPLE='\e[45m'      # Purple
-readonly ONCYAN='\e[46m'        # Cyan
-readonly ONWHITE='\e[47m'       # White
+readonly ONBLACK='\e[40m'          # Black
+readonly ONRED='\e[41m'            # Red
+readonly ONGREEN='\e[42m'          # Green
+readonly ONYELLOW='\e[43m'         # Yellow
+readonly ONBLUE='\e[44m'           # Blue
+readonly ONPURPLE='\e[45m'         # Purple
+readonly ONCYAN='\e[46m'           # Cyan
+readonly ONWHITE='\e[47m'          # White
 
 # echo/color - echo color adds a color wrapper then resets
 # usage: echo/color <ANSII color code> <message to add color to>
