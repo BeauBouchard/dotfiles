@@ -5,7 +5,7 @@ rm ~/.bash_profile
 rm -Rf ~/.shell_helpers
 mkdir -p ~/.shell/setup/alias
 cd ~/.shell && { curl -O https://raw.githubusercontent.com/BeauBouchard/dotfiles/main/.shell/utils.sh ; cd -; }
-source ~/.shell/utils.sh
+. ~/.shell/utils.sh
 cd ~/.shell/setup && { curl -O https://raw.githubusercontent.com/BeauBouchard/dotfiles/main/.shell/setup/ps1.sh ; cd -; }
 cd ~/.shell/alias && { curl -O https://raw.githubusercontent.com/BeauBouchard/dotfiles/main/.shell/setup/alias/index.sh ; cd -; }
 
@@ -13,4 +13,4 @@ cd ~ && { curl -O https://raw.githubusercontent.com/BeauBouchard/dotfiles/main/.
 cd ~ && { curl -O https://raw.githubusercontent.com/BeauBouchard/dotfiles/main/.bash_profile  ; cd -; }
 
 
-.source ~/.bash_profile
+.. ~/.bash_profile
