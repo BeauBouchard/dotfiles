@@ -41,7 +41,7 @@ readonly ONWHITE='\e[47m'          # White
 # example:
 #   echo/color "\033[0;31m" "THIS MESSAGE IS RED"
 echo_color() {
-  echo "$@${RESET}"
+  echo -e "$@${RESET}"
 }
 
 # echo/color/n - same as color, but has no endline
@@ -49,7 +49,7 @@ echo_color() {
 # example:
 #   echo/color/n "\033[0;31m" "THIS MESSAGE IS RED"
 echo_color_n() {
-  echo -n "$@${RESET}"
+  echo -ne "$@${RESET}"
 }
 
 # echo/warn - echo with yellow warning color wrapper
