@@ -57,7 +57,7 @@ echo_color_n() {
 # example:
 #   echo/warn "THIS MESSAGE IS YELLOW"
 echo_warn() {
-  echo_color ${BWHITE}${ONYELLOW}$@
+  echo_color [${BWHITE}${ONYELLOW}$@]
 }
 
 # echo/alert - echo with red alert color wrapper
@@ -65,7 +65,7 @@ echo_warn() {
 # example:
 #   echo/alert "THIS MESSAGE IS RED"
 echo_alert() {
-  echo_color ${BWHITE}${ONRED} $@
+  echo_color [${BWHITE}${ONRED}$@]
 }
 
 # echo/success - echo with green alert color wrapper
@@ -73,7 +73,7 @@ echo_alert() {
 # example:
 #   echo/success "THIS MESSAGE IS GREEN"
 echo_success() {
-  echo_color ${BWHITE}${ONGREEN}$@
+  echo_color [${BWHITE}${ONGREEN}$@]
 }
 
 # input decision for user, useful for assigning variiable values
