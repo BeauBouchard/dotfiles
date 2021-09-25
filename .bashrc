@@ -1,5 +1,5 @@
 ## .bashrc
 
-source ~/.shell/utils.sh
-source ~/.shell/setup/alias/index.sh
-source ~/.shell/setup/ps1.sh
+. ~/.shell/utils.sh
+. ~/.shell/setup/alias/index.sh
+. ~/.shell/setup/ps1.sh
