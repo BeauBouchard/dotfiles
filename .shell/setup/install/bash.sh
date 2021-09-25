@@ -10,5 +10,5 @@ cd ~ && { curl -O -s https://raw.githubusercontent.com/BeauBouchard/dotfiles/mai
 . ~/.bash_profile && \
 echo_alert "Standard Bash Shell Loaded" && sleep 1  && \
 echo_warn "ReWrite Kernel?" && sleep 1 && \
-echo_color_n ${BWHITE}${ONGREEN}[Y]{BWHITE$}{ONBLACK}[N]  && sleep 1 ; 
+echo_color_n ${BWHITE}${ONGREEN}[Y]{BWHITE$}{ONBLACK}[N]  && sleep 1 && \
 busy & sleep 5 ; kill $!
