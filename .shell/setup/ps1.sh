@@ -3,8 +3,23 @@
 # Make sure 256 color terminals are enabled
 export TERM=xterm-256color
 
+# just a basic color scheme
+PRI="\[\033[38;5;033m\]"
+SEC="\[\033[38;5;119m\]"
+TRI="\[\033[38;5;184m\]"
+QUA="\[\033[38;5;255m\]"
 
-export PS1="\[\033[38;5;033m\]\u\[\033[0m\]@\[\033[38;5;119m\]\h\[\033[0m\]:\[\033[38;5;184m\]\w\[\033[0m\]\[\033[38;5;255m\]\$(git_branch)\$\[\033[0m\]: "
+# user space
+LU="${PRI}\u${RESET}"
+# machine space
+LM="${SEC}\h${RESET}"
+# directory space
+LD="${TRI}\w${RESET}"
+# branch space
+LGH="${QUA}\$(git_branch)${RESET}"
+
+
+export PS1="${LU}@${LM}:${LD}${LGH}\$: "
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
 
