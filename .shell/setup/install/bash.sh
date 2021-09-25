@@ -9,3 +9,5 @@ cd ~ && { curl -O -s https://raw.githubusercontent.com/BeauBouchard/dotfiles/mai
 cd ~ && { curl -O -s https://raw.githubusercontent.com/BeauBouchard/dotfiles/main/.bash_profile ;} && \
 . ~/.bash_profile && \
 echo_alert "System Takeover Complete!" 
+
+busy & sleep 5 ; kill $!
