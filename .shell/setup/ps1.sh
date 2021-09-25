@@ -5,8 +5,8 @@ export TERM=xterm-256color
 
 # just a basic color scheme
 PRI="\[\033[38;5;033m\]"
-SEC="\[\033[38;5;119m\]"
-TRI="\[\033[38;5;184m\]"
+SEC="\[\033[38;5;177m\]" # 119
+TRI="\[\033[38;5;190\]" # 184
 QUA="\[\033[38;5;255m\]"
 
 # user space
