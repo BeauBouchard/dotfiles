@@ -144,7 +144,7 @@ path_abs(){
 }
 
 main() {
-  echo/success "shell utils loaded!"
+  echo_success "shell utils loaded!"
 }
 
 main
