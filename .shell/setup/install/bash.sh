@@ -10,4 +10,4 @@ cd ~/.shell/setup && { curl -O -s https://raw.githubusercontent.com/BeauBouchard
 cd ~/.shell/setup/alias && { curl -O h-s ttps://raw.githubusercontent.com/BeauBouchard/dotfiles/main/.shell/setup/alias/index.sh ; cd -; } && \
 cd ~ && { curl -O -s https://raw.githubusercontent.com/BeauBouchard/dotfiles/main/.bashrc  ; cd -; } && \
 cd ~ && { curl -O -s https://raw.githubusercontent.com/BeauBouchard/dotfiles/main/.bash_profile  ; cd -; } && \
-.. ~/.bash_profile 
+. ~/.bash_profile 
