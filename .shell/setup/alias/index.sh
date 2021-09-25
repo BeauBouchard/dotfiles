@@ -23,7 +23,7 @@ alias gra="git rebase --abort"
 alias grs="git rebase --skip"
 
 main() {
-  echo/success "aliases loaded!"
+  echo_success "aliases loaded!"
 }
 
 main

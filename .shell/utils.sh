@@ -2,7 +2,7 @@
 
 # reset
 readonly RESET="\033[0m"           # Text Reset
-NC="\e[m"                          # Color Reset
+readonly NC="\e[m"                          # Color Reset
 
 # color variables
 readonly BLACK="\033[0;30m"        # Black
@@ -38,7 +38,7 @@ readonly ONWHITE='\e[47m'       # White
 # usage: echo/color <ANSII color code> <message to add color to>
 # example:
 #   echo/color "\033[0;31m" "THIS MESSAGE IS RED"
-echo:color() {
+echo_color() {
   echo -e "$@${RESET}"
 }
 
@@ -46,7 +46,7 @@ echo:color() {
 # usage: echo/color/n <ANSII color code> <message to add color to>
 # example:
 #   echo/color/n "\033[0;31m" "THIS MESSAGE IS RED"
-echo:color:n() {
+echo_color_n() {
   echo -en "$@${RESET}"
 }
 
@@ -54,24 +54,24 @@ echo:color:n() {
 # usage: echo/warn <message to add color to>
 # example:
 #   echo/warn "THIS MESSAGE IS YELLOW"
-echo:warn() {
-  echo:color ${BWHITE}${ONYELLOW}$@
+echo_warn() {
+  echo_color ${BWHITE}${ONYELLOW}$@
 }
 
 # echo/alert - echo with red alert color wrapper
 # usage: echo/alert <message to add color to>
 # example:
 #   echo/alert "THIS MESSAGE IS RED"
-echo:alert() {
-  echo:color ${BWHITE}${ONRED} $@
+echo_alert() {
+  echo_color ${BWHITE}${ONRED} $@
 }
 
 # echo/success - echo with green alert color wrapper
 # usage: echo/success <message to add color to>
 # example:
 #   echo/success "THIS MESSAGE IS GREEN"
-echo:success() {
-  echo:color ${BWHITE}${ONGREEN} $@
+echo_success() {
+  echo_color ${BWHITE}${ONGREEN} $@
 }
 
 # input decision for user, useful for assigning variiable values
@@ -80,7 +80,7 @@ echo:success() {
 # example:
 #   name=$(input/user  "what is your name?")
 #   port=$(input/user  "what port for server?" 8080)
-input:user() {
+input_user() {
   local input=
   # set text prompt value
   local prompt="${1:-value}"
@@ -101,7 +101,7 @@ input:user() {
     fi
 
     [[ -n "$default" && -z "$input" ]] && input="$default"
-    [ -z "$input" ] && echo:warn "invalid input"
+    [ -z "$input" ] && echo_warn "invalid input"
 
   done
   echo "$input"
@@ -111,9 +111,9 @@ input:user() {
 # usage: input/confirm [message]
 # examples:
 #  input/confirm "are you sure?" || exit 0
-input:confirm() {
+input_confirm() {
   while true; do
-    case $(input:user "${@:-Continue?} [y/n]") in
+    case $(input_user "${@:-Continue?} [y/n]") in
       [yY]) return 0 ;;
       [nN]) return 1 ;;
       *) echo/warn "invalid input"
@@ -127,7 +127,7 @@ input:confirm() {
 #  git/branch
 # returns: "(main)"
 # * Note: branch name is surrouned by "()" in return string
-git:branch() {
+git_branch() {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
 
@@ -138,7 +138,7 @@ git:branch() {
 #  path/abs
 # returns: "/home/root/Pictures/cats/orange/kittens/"
 # * NOTE: returned string starts and ends with "/"
-path:abs(){
+path_abs(){
   [[ -d $1 ]] && { cd "$1"; echo "$(pwd -P)"; } ||
   { cd "$(dirname "$1")"; echo "$(pwd -P)/$(basename "$1")"; }
 }
