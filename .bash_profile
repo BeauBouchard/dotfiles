@@ -1,4 +1,3 @@
-## Beau Bouchard
 ## .bash_profile
 
 source ~/.shell/utils.sh
