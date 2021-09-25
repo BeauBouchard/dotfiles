@@ -10,4 +10,4 @@ cd ~/.shell/setup/install && { curl -O -s https://raw.githubusercontent.com/Beau
 cd ~ && { curl -O -s https://raw.githubusercontent.com/BeauBouchard/dotfiles/main/.bashrc ;} && \
 cd ~ && { curl -O -s https://raw.githubusercontent.com/BeauBouchard/dotfiles/main/.bash_profile ;} && \
 . ~/.bash_profile && \
-echo_alert "Standard Bash Shell Loaded"
+echo_alert "Standard Bash Shell Loaded${RESET}${BRED}${ONWHITE}${DFV}"
