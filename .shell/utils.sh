@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+readonly DFV="v0.1.3"
+
 # reset
 readonly RESET="\033[0m"           # Text Reset
 readonly NC="\e[m"                 # Color Reset
