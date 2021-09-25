@@ -25,7 +25,7 @@ echo:color() {
 # usage: echo/color/n <ANSII color code> <message to add color to>
 # example:
 #   echo/color/n "\033[0;31m" "THIS MESSAGE IS RED"
-echo:color/n() {
+echo:color:n() {
   echo -en "$@${RESET}"
 }
 
@@ -59,7 +59,7 @@ echo:success() {
 # example:
 #   name=$(input/user  "what is your name?")
 #   port=$(input/user  "what port for server?" 8080)
-input/user() {
+input:user() {
   local input=
   # set text prompt value
   local prompt="${1:-value}"
