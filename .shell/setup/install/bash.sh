@@ -2,7 +2,6 @@
 echo "starting to take over system..." && \
 echo $PWD && \
 rm -Rf ~/.shell/  && \
-rm ~/.bash_profile && \
 rm -Rf ~/.shell_helpers && \
 mkdir -p ~/.shell/setup/alias && \
 cd ~/.shell && { curl -O https://raw.githubusercontent.com/BeauBouchard/dotfiles/main/.shell/utils.sh ; cd -; } && \
