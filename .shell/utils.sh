@@ -150,7 +150,7 @@ motd() {
 
 
 main() {
-  motd()
+  motd
 }
 
 main
