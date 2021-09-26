@@ -57,7 +57,7 @@ input_user() {
   [ -z "$default" ] || prompt+=" [$default]"
 
   # convert escape sequences in prompt to ansi codes
-  prompt="$(echo -e -n "$prompt : ")"
+  prompt="$(echo -en "$prompt : ")"
 
   while [ -z "$input" ]; do
     if [ -t 0 ]; then
