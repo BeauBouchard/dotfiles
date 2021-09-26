@@ -44,28 +44,19 @@ ONPURPLE="\[\e[45m\]"         # Purple
 ONCYAN="\[\e[46m\]"           # Cyan
 ONWHITE="\[\e[47m\]"          # White
 
-THEME_1_a="\[\033[38;5;033m\]"
-THEME_1_b="\[\033[38;5;177m\]"
-THEME_1_c="\[\033[38;5;190m\]"
-THEME_1_d="\[\033[38;5;255m\]"
-
-set_theme_one(){
-  PS1_1="${THEME_1_a}"
-  PS1_2="${THEME_1_b}"
-  PS1_3="${THEME_1_c}"
-  PS1_4="${THEME_1_d}"
+set_theme(a,b,c,d){
+  PS1_1="\[\033[38;5;${a}m\]"
+  PS1_2="\[\033[38;5;${b}m\]"
+  PS1_3="\[\033[38;5;${c}m\]"
+  PS1_4="\[\033[38;5;${d}m\]"
 }
 
-THEME_2_a="\[\033[38;5;033m\]"
-THEME_2_b="\[\033[38;5;119m\]"
-THEME_2_c="\[\033[38;5;184m\]"
-THEME_2_d="\[\033[38;5;255m\]"
+set_theme_one(){
+  set_theme(033,177,190,255)
+}
 
 set_theme_two(){
-  PS1_1="${THEME_2_a}"
-  PS1_2="${THEME_2_b}"
-  PS1_3="${THEME_2_c}"
-  PS1_4="${THEME_2_d}"
+  set_theme(033,119,184,255)
 }
 
 set_theme_one
