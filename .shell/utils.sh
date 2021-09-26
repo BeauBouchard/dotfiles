@@ -11,7 +11,7 @@ echo_color() {
 }
 
 echo_blink () {
-  echo -ne "$@${RESET}"
+  echo -ne "${BLINK}$@${RESET}"
 }
 
 # echo_color_n - same as color, but has no endline
