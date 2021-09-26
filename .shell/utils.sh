@@ -2,40 +2,6 @@
 
 readonly DFV="v0.1.3"
 
-# reset
-readonly RESET="\033[0m"           # Text Reset
-readonly NC="\e[m"                 # Color Reset
-
-# color variables
-readonly BLACK="\033[0;30m"        # Black
-readonly RED="\033[0;31m"          # Red
-readonly GREEN="\033[0;32m"        # Green
-readonly YELLOW="\033[0;33m"       # Yellow
-readonly BLUE="\033[0;34m"         # Blue
-readonly PURPLE="\033[0;35m"       # Purple
-readonly CYAN="\033[0;36m"         # Cyan
-readonly WHITE="\033[0;37m"        # White
-
-# bold
-readonly BBLACK='\e[1;30m'         # Black
-readonly BRED='\e[1;31m'           # Red
-readonly BGREEN='\e[1;32m'         # Green
-readonly BYELLOW='\e[1;33m'        # Yellow
-readonly BBLUE='\e[1;34m'          # Blue
-readonly BPURPLE='\e[1;35m'        # Purple
-readonly BCYAN='\e[1;36m'          # Cyan
-readonly BWHITE='\e[1;37m'         # White
-
-# background
-readonly ONBLACK='\e[40m'          # Black
-readonly ONRED='\e[41m'            # Red
-readonly ONGREEN='\e[42m'          # Green
-readonly ONYELLOW='\e[43m'         # Yellow
-readonly ONBLUE='\e[44m'           # Blue
-readonly ONPURPLE='\e[45m'         # Purple
-readonly ONCYAN='\e[46m'           # Cyan
-readonly ONWHITE='\e[47m'          # White
-
 # echo/color - echo color adds a color wrapper then resets
 # usage: echo/color <ANSII color code> <message to add color to>
 # example:
@@ -133,9 +99,8 @@ git_branch() {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
 
-
-# for checking email inbox 
-gmail() { 
+# for checking email inbox
+gmail() {
   curl -u "$1" --silent "https://mail.google.com/mail/feed/atom" | sed -e 's/</fullcount.*/n/' | sed -e 's/.*fullcount>//'
 }
 
@@ -151,8 +116,41 @@ path_abs(){
   { cd "$(dirname "$1")"; echo "$(pwd -P)/$(basename "$1")"; }
 }
 
+battery_life() {
+  if [ -d /sys/class/power_supply/BAT0 ];
+  then
+      now=`cat /sys/class/power_supply/BAT0/energy_now`
+      full=`cat /sys/class/power_supply/BAT0/energy_full`
+      out=`echo $now/$full*100 | bc -l | cut -c 1-5`
+      printf "%.f%% | " $out
+  else
+      echo ""
+  fi
+}
+
+avg_cpu_temp() {
+  case "$OSTYPE" in linux-gnu)
+    if which sensors > /dev/null; then
+      sensors | grep Core | awk '{print $3;}' | grep -oEi '[0-9]+.[0-9]+' | awk '{total+=$1; count+=1} END {print total/count,"C"}'
+    else
+      ""
+    fi
+    ;;
+  esac
+}
+
+
+
+
+motd() {
+  echo_alert "Standard Bash Shell Loaded ${RESET}${BRED}${ONWHITE}${DFV}"
+  battery_life
+  avg_cpu_temp
+}
+
+
 main() {
-  echo_success "shell utils loaded!"
+  motd()
 }
 
 main
