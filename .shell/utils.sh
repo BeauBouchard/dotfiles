@@ -119,8 +119,8 @@ path_abs(){
 battery_life() {
   if [ -d /sys/class/power_supply/BAT0 ];
   then
-      now=`cat /sys/class/power_supply/BAT0/energy_now`
-      full=`cat /sys/class/power_supply/BAT0/energy_full`
+      now=`cat /sys/class/power_supply/BAT1/charge_now`
+      full=`cat /sys/class/power_supply/BAT1/charge_full`
       out=`echo $now/$full*100 | bc -l | cut -c 1-5`
       printf "%.f%% | " $out
   else
@@ -128,24 +128,9 @@ battery_life() {
   fi
 }
 
-avg_cpu_temp() {
-  case "$OSTYPE" in linux-gnu)
-    if which sensors > /dev/null; then
-      sensors | grep Core | awk '{print $3;}' | grep -oEi '[0-9]+.[0-9]+' | awk '{total+=$1; count+=1} END {print total/count,"C"}'
-    else
-      ""
-    fi
-    ;;
-  esac
-}
-
-
-
-
 motd() {
   echo_alert "Standard Bash Shell Loaded ${RESET}${BRED}${ONWHITE}${DFV}"
   battery_life
-  avg_cpu_temp
 }
 
 
