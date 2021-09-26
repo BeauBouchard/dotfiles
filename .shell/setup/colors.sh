@@ -5,43 +5,67 @@ export TERM=xterm-256color
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
 
+# For bash only, so we don't count the lines of non-printed characters. 
+# otherwise the line will wrap befor its supposed to over the Prompt
+# \[  - Begin a sequence of non-printing characters. This could be used to embed a terminal control sequence into the prompt.
+# \]  - End a sequence of non-printing characters.
+
 # reset
-readonly RESET="\033[0m"           # Text Reset
-readonly NC="\e[m"                 # Color Reset
-readonly BLINK="\033[33;5m"        # Makes Text Blink
+RESET="\[\033[0m\]"           # Text Reset
+NC="\[\e[m\]"                 # Color Reset
 
 # color variables
-readonly BLACK="\033[0;30m"        # Black
-readonly RED="\033[0;31m"          # Red
-readonly GREEN="\033[0;32m"        # Green
-readonly YELLOW="\033[0;33m"       # Yellow
-readonly BLUE="\033[0;34m"         # Blue
-readonly PURPLE="\033[0;35m"       # Purple
-readonly CYAN="\033[0;36m"         # Cyan
-readonly WHITE="\033[0;37m"        # White
+BLACK="\[\033[0;30m\]"        # Black
+RED="\[\033[0;31m\]"          # Red
+GREEN="\[\033[0;32m\]"        # Green
+YELLOW="\[\033[0;33m\]"       # Yellow
+BLUE="\[\033[0;34m\]"         # Blue
+PURPLE="\[\033[0;35m\]"       # Purple
+CYAN="\[\033[0;36m\]"         # Cyan
+WHITE="\[\033[0;37m\]"        # White
 
 # bold
-readonly BBLACK="\e[1;30m"         # Black
-readonly BRED="\e[1;31m"           # Red
-readonly BGREEN="\e[1;32m"         # Green
-readonly BYELLOW="\e[1;33m"        # Yellow
-readonly BBLUE="\e[1;34m"          # Blue
-readonly BPURPLE="\e[1;35m"        # Purple
-readonly BCYAN="\e[1;36m"          # Cyan
-readonly BWHITE="\e[1;37m"         # White
+BBLACK="\[\e[1;30m\]"         # Black
+BRED="\[\e[1;31m\]"           # Red
+BGREEN="\[\e[1;32m\]"         # Green
+BYELLOW="\[\e[1;33m\]"        # Yellow
+BBLUE="\[\e[1;34m\]"          # Blue
+BPURPLE="\[\e[1;35m\]"        # Purple
+BCYAN="\[\e[1;36m\]"          # Cyan
+BWHITE="\[\e[1;37m\]"         # White
 
 # background
-readonly ONBLACK="\e[40m"          # Black
-readonly ONRED="\e[41m"            # Red
-readonly ONGREEN="\e[42m"          # Green
-readonly ONYELLOW="\e[43m"         # Yellow
-readonly ONBLUE="\e[44m"           # Blue
-readonly ONPURPLE="\e[45m"         # Purple
-readonly ONCYAN="\e[46m"           # Cyan
-readonly ONWHITE="\e[47m"          # White
+ONBLACK="\[\e[40m\]"          # Black
+ONRED="\[\e[41m\]"            # Red
+ONGREEN="\[\e[42m\]"          # Green
+ONYELLOW="\[\e[43m\]"         # Yellow
+ONBLUE="\[\e[44m\]"           # Blue
+ONPURPLE="\[\e[45m\]"         # Purple
+ONCYAN="\[\e[46m\]"           # Cyan
+ONWHITE="\[\e[47m\]"          # White
 
-# just a basic PS1 color scheme
-PS1_1="\033[38;5;033m"
-PS1_2="\033[38;5;177m" # 119
-PS1_3="\033[38;5;190m" # 184
-PS1_4="\033[38;5;255m"
+THEME_1_a="\[\033[38;5;033m\]"
+THEME_1_b="\[\033[38;5;177m\]"
+THEME_1_c="\[\033[38;5;190m\]"
+THEME_1_d="\[\033[38;5;255m\]"
+
+set_theme_one(){
+  PS1_1="${THEME_1_a}"
+  PS1_2="${THEME_1_b}"
+  PS1_3="${THEME_1_c}"
+  PS1_4="${THEME_1_d}"
+}
+
+THEME_2_a="\[\033[38;5;033m\]"
+THEME_2_b="\[\033[38;5;119m\]"
+THEME_2_c="\[\033[38;5;184m\]"
+THEME_2_d="\[\033[38;5;255m\]"
+
+set_theme_two(){
+  PS1_1="${THEME_2_a}"
+  PS1_2="${THEME_2_b}"
+  PS1_3="${THEME_2_c}"
+  PS1_4="${THEME_2_d}"
+}
+
+set_theme_one
