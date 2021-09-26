@@ -10,8 +10,12 @@ echo_color() {
   echo -e "$@${RESET}"
 }
 
-# echo/color/n - same as color, but has no endline
-# usage: echo/color/n <ANSII color code> <message to add color to>
+echo_blink () {
+  echo -ne "$@${RESET}"
+}
+
+# echo_color_n - same as color, but has no endline
+# usage: echo_color_n <ANSII color code> <message to add color to>
 # example:
 #   echo/color/n "\033[0;31m" "THIS MESSAGE IS RED"
 echo_color_n() {
@@ -137,7 +141,6 @@ battery_life() {
 motd() {
   echo_alert "Standard Bash Shell Loaded ${RESET}${BRED}${ONWHITE}${DFV}${RESET} \n${battery_life} Battery Left \n"
 }
-
 
 main() {
   motd
