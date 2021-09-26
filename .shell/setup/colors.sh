@@ -8,6 +8,7 @@ export LSCOLORS=ExFxBxDxCxegedabagacad
 # reset
 readonly RESET="\033[0m"           # Text Reset
 readonly NC="\e[m"                 # Color Reset
+readonly BLINK="\033[33;5m"        # Makes Text Blink
 
 # color variables
 readonly BLACK="\033[0;30m"        # Black
