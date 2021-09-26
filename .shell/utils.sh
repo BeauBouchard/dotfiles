@@ -57,31 +57,31 @@ echo_color_n() {
 # example:
 #   echo/warn "THIS MESSAGE IS YELLOW"
 echo_warn() {
-  echo_color [${BWHITE}${ONYELLOW}$@${RESET}]
+  echo_color ${BWHITE}${ONYELLOW}$@${RESET}
 }
 
-# echo/alert - echo with red alert color wrapper
+# echo_alert - echo with red alert color wrapper
 # usage: echo/alert <message to add color to>
 # example:
-#   echo/alert "THIS MESSAGE IS RED"
+#   echo_alert "THIS MESSAGE IS RED"
 echo_alert() {
-  echo_color [${BWHITE}${ONRED}$@${RESET}]
+  echo_color ${BWHITE}${ONRED}$@${RESET}
 }
 
-# echo/success - echo with green alert color wrapper
+# echo_success - echo with green alert color wrapper
 # usage: echo/success <message to add color to>
 # example:
-#   echo/success "THIS MESSAGE IS GREEN"
+#   echo_success "THIS MESSAGE IS GREEN"
 echo_success() {
-  echo_color [${BWHITE}${ONGREEN}$@${RESET}]
+  echo_color ${BWHITE}${ONGREEN}$@${RESET}
 }
 
 # input decision for user, useful for assigning variiable values
-# usage: prompt/user <prompt message> [fallback value*]
+# usage: prompt_user <prompt message> [fallback value*]
 #   * uses fallback/default value if no input recieved
 # example:
-#   name=$(input/user  "what is your name?")
-#   port=$(input/user  "what port for server?" 8080)
+#   name=$(input_user  "what is your name?")
+#   port=$(input_user  "what port for server?" 8080)
 input_user() {
   local input=
   # set text prompt value
@@ -109,8 +109,8 @@ input_user() {
   echo "$input"
 }
 
-# input/confirm - simple boolean decision to confirm
-# usage: input/confirm [message]
+# input_confirm - simple boolean decision to confirm
+# usage: input_confirm [message]
 # examples:
 #  input/confirm "are you sure?" || exit 0
 input_confirm() {
@@ -123,16 +123,18 @@ input_confirm() {
   done
 }
 
-# git/branch - returns the current git branch for the current environment
+# git_branch - returns the current git branch for the current environment
 # usage: git/branch
 # examples:
-#  git/branch
+#  git_branch
 # returns: "(main)"
 # * Note: branch name is surrouned by "()" in return string
 git_branch() {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
 
+
+# for checking email inbox 
 gmail() { 
   curl -u "$1" --silent "https://mail.google.com/mail/feed/atom" | sed -e 's/</fullcount.*/n/' | sed -e 's/.*fullcount>//'
 }
