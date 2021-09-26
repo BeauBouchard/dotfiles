@@ -1,6 +1,6 @@
 ## .bash_profile
 
-. ~/.shell/setup/colors.sh
-. ~/.shell/utils.sh
-. ~/.shell/setup/alias.sh
-. ~/.shell/setup/ps1.sh
+source ~/.shell/setup/colors.sh
+source ~/.shell/utils.sh
+source ~/.shell/setup/alias.sh
+source ~/.shell/setup/ps1.sh
