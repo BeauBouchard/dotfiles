@@ -52,11 +52,11 @@ set_theme(a,b,c,d){
 }
 
 set_theme_one(){
-  set_theme(033,177,190,255)
+  set_theme "033" "177" "190" "255"
 }
 
 set_theme_two(){
-  set_theme(033,119,184,255)
+  set_theme "033" "119" "184" "255" 
 }
 
 set_theme_one
