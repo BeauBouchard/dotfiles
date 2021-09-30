@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
 
 ## Aliases
-alias ls='ls -GFh'
-alias ll='ls -la'
 alias ..="cd .."
 alias fhere="find . -name "
 alias df="df -Tha --total"
