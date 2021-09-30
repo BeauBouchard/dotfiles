@@ -12,8 +12,8 @@ export LSCOLORS=ExFxBxDxCxegedabagacad
 
 # reset
 # reset
-RESET="\033[0m"           # Text Reset
-NC="\e[m"                 # Color Reset
+RESET="\001$(tput sgr0)\002"#"\033[0m"           # Text Reset
+NC="\001$(tput sgr0)\002"#"\e[m"                 # Color Reset
 
 # color variables
 BLACK="\[\033[0;30m\]"        # Black
