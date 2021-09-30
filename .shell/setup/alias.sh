@@ -7,8 +7,6 @@ alias df="df -Tha --total"
 
 # CD Project base home
 alias cdh="cd ~/Projects/"
-alias ls="ls --color=auto" 
-alias ll="ls --color -al" 
 alias grep='grep --color=auto' 
 
 alias listen="lsof -P -i -n" 
