@@ -138,6 +138,10 @@ battery_life() {
   fi
 }
 
+open_connections() {
+  awk 'END {print NR}' /proc/net/tcp
+}
+
 
 # runs something once after restart
 runonce(){
