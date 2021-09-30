@@ -188,7 +188,12 @@ runonce(){
 }
 
 motd() {
-  echo_alert "Standard Bash Shell Loaded ${RESET}${BRED}${ONWHITE}${DFV}${RESET} \n${battery_life} Battery Left \n"
+  echo_alert "Standard Bash Shell Loaded ${RESET}${BRED}${ONWHITE}${DFV}${RESET}"
+  if [ -z "$battery_life" ]; then 
+    echo_warn "Desktop"
+  else
+    echo_warn "${battery_life} Battery Left"
+  fi
 }
 
 main() {
