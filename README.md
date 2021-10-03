@@ -11,5 +11,11 @@ curl -s https://raw.githubusercontent.com/BeauBouchard/dotfiles/main/.shell/setu
 
 
 ```
-curl -s https://raw.githubusercontent.com/BeauBouchard/dotfiles/main/.shell/setup/install/work_bash.sh | bash
+curl -s https://raw.githubusercontent.com/BeauBouchard/dotfiles/main/.shell/setup/install/bash_work.sh | bash
+```
+
+
+
+```
+curl -s https://raw.githubusercontent.com/BeauBouchard/dotfiles/main/.shell/setup/install/bash_home.sh | bash
 ```
