@@ -200,8 +200,7 @@ runonce(){
   fi
 }
 
-motd() {
-  echo_alert "Standard Bash Shell Loaded ${RESET}${BRED}${ONWHITE}${DFV}${RESET}"
+batz() {
   if [ -z "$battery_life" ]; then 
     echo_warn "Desktop"
   else
@@ -209,8 +208,3 @@ motd() {
   fi
 }
 
-main() {
-  motd
-}
-
-main
