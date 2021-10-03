@@ -17,8 +17,6 @@ set_theme_two() {
   set_theme "033" "119" "184" "255" 
 }
 
-set_theme_one
-
 # user space
 LU="${PS1_1}\u${RS}"
 # machine space
