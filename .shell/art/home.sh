@@ -12,3 +12,4 @@ echo -ne "${BWHITE}${ONRED}Standard Bash Shell Loaded ${RESET}${BRED}${ONWHITE}$
 echo  "          └─│─┘"
 echo "           └───────────────────────────────────────────────────────────┘"
 
+set_theme_two
