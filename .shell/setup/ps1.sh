@@ -11,10 +11,12 @@ set_theme () {
 
 set_theme_one() {
   set_theme "033" "177" "190" "255"
+  export_theme
 }
 
 set_theme_two() {
   set_theme "033" "119" "184" "255" 
+  export_theme
 }
 
 # user space
@@ -26,4 +28,7 @@ LD="${PS1_3}\w${RS}"
 # branch space
 LGH="${PS1_4}\$(git_branch)${RS}"
 
-export PS1="${LU}@${LM}:${LD}${LGH}\$: "
+export_theme() {
+  export PS1="${LU}@${LM}:${LD}${LGH}\$: "
+}
+
