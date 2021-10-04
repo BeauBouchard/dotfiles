@@ -29,6 +29,14 @@ LD="${PS1_3}\w${RS}"
 LGH="${PS1_4}\$(git_branch)${RS}"
 
 export_theme() {
+  # user space
+  LU="${PS1_1}\u${RS}"
+  # machine space
+  LM="${PS1_2}\h${RS}"
+  # directory space
+  LD="${PS1_3}\w${RS}"
+  # branch space
+  LGH="${PS1_4}\$(git_branch)${RS}"
   export PS1="${LU}@${LM}:${LD}${LGH}\$: "
 }
 
