@@ -204,7 +204,7 @@ batz() {
   if [ -z "$battery_life" ]; then 
     echo_warn "Desktop"
   else
-    echo_warn "${battery_life} Battery Left"
+    echo_warn "${battery_life} 🔋"
   fi
 }
 
