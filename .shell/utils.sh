@@ -202,7 +202,7 @@ runonce(){
 
 batz() {
   if [ -z "$battery_life" ]; then 
-    echo_warn "Desktop"
+    echo_warn "  🖥  "
   else
     echo_warn "${battery_life} 🔋"
   fi
