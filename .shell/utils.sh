@@ -200,6 +200,22 @@ runonce(){
   fi
 }
 
+detect_os() {
+  if [[ "$OSTYPE" == "linux-gnu"* ] || [ "$OSTYPE" == "linux"* ]]; then
+    # linux and most distros
+  elif [[ "$OSTYPE" == "bsd"* ] || [ "$OSTYPE" == "freebsd"* ]]; then
+    # bsd
+  elif [[ "$OSTYPE" == "darwin"* ]]; then
+    # Mac OSX
+  elif [[ "$OSTYPE" == "cygwin" ]]; then
+    # POSIX compatibility layer and Linux environment emulation for Windows
+  elif [[ "$OSTYPE" == "msys" ]]; then
+    # Lightweight shell and GNU utilities compiled for Windows (part of MinGW)
+  else
+    # Unknown.
+  fi
+}
+
 batz() {
   if [ -z "$battery_life" ]; then 
     echo_warn "  🖥  "
