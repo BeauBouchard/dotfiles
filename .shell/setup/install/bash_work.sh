@@ -12,7 +12,7 @@ cd ~/.shell/setup/install && { curl -O -s https://raw.githubusercontent.com/Beau
 cd ~/.shell/setup/install && { curl -O -s https://raw.githubusercontent.com/BeauBouchard/dotfiles/main/.shell/setup/install/nvm.sh ;} && \
 cd ~ && { curl -O -s https://raw.githubusercontent.com/BeauBouchard/dotfiles/main/.bashrc ;} && \
 cd ~ && { curl -O -s https://raw.githubusercontent.com/BeauBouchard/dotfiles/main/.bash_profile ;} && \
-echo -n "source ~/.shell/art/bee.sh" >> ~/.bash_profile && \
-echo -n "source ~/.shell/art/bee.sh" >> ~/.bashrc && \ 
+echo "source ~/.shell/art/bee.sh" >> ~/.bash_profile && \
+echo "source ~/.shell/art/bee.sh" >> ~/.bashrc && \ 
 source ~/.shell/setup/install/nvm.sh
 
