@@ -38,6 +38,14 @@ echo_alert() {
   echo_color ${BWHITE}${ONRED}$@${RESET}
 }
 
+# echo_info - echo with a calming blue color wrapper
+# usage: eecho_info<message to add color to>
+# example:
+#   echo_info "THIS MESSAGE IS BLUE"
+echo_info() {
+  echo_color ${BWHITE}${ONCYAN}$@${RESET}
+}
+
 # echo_success - echo with green alert color wrapper
 # usage: echo/success <message to add color to>
 # example:
@@ -197,6 +205,22 @@ runonce(){
     if [[ $REMOVE -ne 0 ]]; then
       rm $SCRIPT
     fi
+  fi
+}
+
+detect_os() {
+  if [[ "$OSTYPE" == "linux-gnu"* ] || [ "$OSTYPE" == "linux"* ]]; then
+    # linux and most distros
+  elif [[ "$OSTYPE" == "bsd"* ] || [ "$OSTYPE" == "freebsd"* ]]; then
+    # bsd
+  elif [[ "$OSTYPE" == "darwin"* ]]; then
+    # Mac OSX
+  elif [[ "$OSTYPE" == "cygwin" ]]; then
+    # POSIX compatibility layer and Linux environment emulation for Windows
+  elif [[ "$OSTYPE" == "msys" ]]; then
+    # Lightweight shell and GNU utilities compiled for Windows (part of MinGW)
+  else
+    # Unknown.
   fi
 }
 
