@@ -38,6 +38,14 @@ echo_alert() {
   echo_color ${BWHITE}${ONRED}$@${RESET}
 }
 
+# echo_info - echo with a calming blue color wrapper
+# usage: eecho_info<message to add color to>
+# example:
+#   echo_info "THIS MESSAGE IS BLUE"
+echo_info() {
+  echo_color ${BWHITE}${ONCYAN}$@${RESET}
+}
+
 # echo_success - echo with green alert color wrapper
 # usage: echo/success <message to add color to>
 # example:
