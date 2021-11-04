@@ -1,2 +1,3 @@
 # Store your ENV keys here...
 
+export BASH_SILENCE_DEPRECATION_WARNING=1
