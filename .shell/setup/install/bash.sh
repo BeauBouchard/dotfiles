@@ -5,6 +5,7 @@ mkdir -p ~/.shell/setup/install && \
 mkdir -p ~/.shell/art/views && \
 cd ~/.shell && { curl -O -s https://raw.githubusercontent.com/BeauBouchard/dotfiles/main/.shell/utils.sh ;} && \
 cd ~/.shell && { curl -O -s https://raw.githubusercontent.com/BeauBouchard/dotfiles/main/.shell/env.sh ;} && \
+cd ~/.shell && { curl -O -s https://raw.githubusercontent.com/BeauBouchard/dotfiles/main/.shell/VERSION ;} && \
 cd ~/.shell/art/views && { curl -O -s https://raw.githubusercontent.com/BeauBouchard/dotfiles/main/.shell/art/views/home.sh ;} && \
 cd ~/.shell/art && { curl -O -s https://raw.githubusercontent.com/BeauBouchard/dotfiles/main/.shell/art/bee.sh ;} && \
 cd ~/.shell/setup && { curl -O -s https://raw.githubusercontent.com/BeauBouchard/dotfiles/main/.shell/setup/ps1.sh ;} && \
