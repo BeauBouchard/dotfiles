@@ -1,6 +1,7 @@
 
 # Number of seconds to wait before printing a reminder
 UPDATE_THRESHOLD="86400"
+VERSION_GITHUB_URL="https://raw.githubusercontent.com/BeauBouchard/dotfiles/main/.shell/VERSION"
 
 ## Time Based Update Check
 update_check_time() {
@@ -29,14 +30,16 @@ update_check_time() {
   fi
 }
 
+## Checks the version inturnal against a version of the repo on main
 update_check_version() {
   INT_VERSION=$(<"/.shell/VERSION")
-  # we will need to update this later, but for right now and testing its fine. 
-  EXT_VERSION=$(curl -s "https://raw.githubusercontent.com/BeauBouchard/dotfiles/main/.shell/VERSION")
-  if [[ ]]; then
+  EXT_VERSION=$(curl -s $VERSION_GITHUB_URL)
+  if [[ $INT_VERSION == $EXT_VERSION]]; then
+    echo_success "Your System is up-to-date! Goodjob!"
+  else
     echo_alert "Your System is Out-of-Date!"
     echo_alert 'Run `update` to bring it up to date.'
-  else
-    echo_success "Your System is up-to-date! Goodjob!
+    echo_alert "Remote Version: $INT_VERSION"
+    echo_alert "Inturnal Version: $EXT_VERSION"
   fi
 }
