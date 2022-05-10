@@ -2,6 +2,12 @@
 
 a standard bash environment
 
+### Warning: 
+
+    Run at own risk lol 
+
+
+### Standard
 
 ```
 curl -s https://raw.githubusercontent.com/BeauBouchard/dotfiles/main/.shell/setup/install/bash.sh | bash
@@ -20,12 +26,3 @@ curl -s https://raw.githubusercontent.com/BeauBouchard/dotfiles/main/.shell/setu
 ```
 curl -s https://raw.githubusercontent.com/BeauBouchard/dotfiles/main/.shell/setup/install/bash_home.sh | bash
 ```
-
-Currently supported pre-installations
-* `jq` 
-* `nvm` 
-
-Future support will include
-* `docker`
-* `vsCode` 
-* 
