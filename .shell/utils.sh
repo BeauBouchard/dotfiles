@@ -3,7 +3,10 @@
 
 # Number of seconds to wait before printing a reminder
 UPDATE_THRESHOLD="86400"
-VERSION_GITHUB_URL="https://raw.githubusercontent.com/BeauBouchard/dotfiles/main/.shell/VERSION"
+readonly VERSION_GITHUB_URL="https://raw.githubusercontent.com/BeauBouchard/dotfiles/main/.shell/VERSION"
+readonly INT_VERSION=$(<"~/.shell/VERSION")
+readonly EXT_VERSION=$(curl -s $VERSION_GITHUB_URL)
+
 
 readonly BASH_PROFILE_FILE=~/.bash_profile
 readonly BASHRC_FILE=~/.bash_profile
@@ -253,9 +256,7 @@ update_check_time() {
 
 ## Checks the version inturnal against a version of the repo on main
 update_check_version() {
-  INT_VERSION=$(<"/.shell/VERSION")
-  EXT_VERSION=$(curl -s $VERSION_GITHUB_URL)
-  if [[ $INT_VERSION == $EXT_VERSION]]; then
+  if [ $INT_VERSION == $EXT_VERSION ]; then
     echo_success "Your System is up-to-date! Goodjob!"
   else
     echo_alert "Your System is Out-of-Date!"
@@ -266,9 +267,7 @@ update_check_version() {
 }
 
 update_check_version_fix() { 
-  INT_VERSION=$(<"/.shell/VERSION")
-  EXT_VERSION=$(curl -s $VERSION_GITHUB_URL)
-  if [[ $INT_VERSION == $EXT_VERSION]]; then
+  if [ $INT_VERSION == $EXT_VERSION ]; then
     echo_success "Your System is up-to-date! Goodjob!"
   else
     echo_alert "Your System is Out-of-Date!"
