@@ -1,6 +1,13 @@
 #!/usr/bin/env bash
 
-readonly DFV="v0.1.3"
+
+# Number of seconds to wait before printing a reminder
+UPDATE_THRESHOLD="86400"
+VERSION_GITHUB_URL="https://raw.githubusercontent.com/BeauBouchard/dotfiles/main/.shell/VERSION"
+
+readonly BASH_PROFILE_FILE=~/.bash_profile
+readonly BASHRC_FILE=~/.bash_profile
+readonly DFV=$(<"/.shell/VERSION")
 
 # echo/color - echo color adds a color wrapper then resets
 # usage: echo/color <ANSII color code> <message to add color to>
@@ -216,3 +223,106 @@ batz() {
   fi
 }
 
+
+## Time Based Update Check
+update_check_time() {
+  [ ! -e $HOME/.last_update ] && touch $HOME/.last_update
+  # Initialize for when we have no GNU date available
+  last_check=0
+  time_now=0
+
+  # Darwin uses BSD, check for gdate, else use date
+  if [[ $(uname) = "Darwin" && -n $(which gdate) ]]; then
+    last_login=$(gdate -r ~/.last_update +%s)
+    time_now=$(gdate +%s)
+  else
+    # Ensure this is GNU grep
+    if [ -n "$(date --version 2> /dev/null | grep GNU)" ]; then
+      last_login=$(date -r ~/.last_update +%s)
+      time_now=$(date +%s)
+    fi
+  fi
+
+  time_since_check=$((time_now - last_login))
+
+  if [ "$time_since_check" -ge "$UPDATE_THRESHOLD" ]; then
+    echo_alert "$cred==>$cemph Your system is out of date!$cnone"
+    echo_alert 'Run `update` to bring it up to date.'
+  fi
+}
+
+## Checks the version inturnal against a version of the repo on main
+update_check_version() {
+  INT_VERSION=$(<"/.shell/VERSION")
+  EXT_VERSION=$(curl -s $VERSION_GITHUB_URL)
+  if [[ $INT_VERSION == $EXT_VERSION]]; then
+    echo_success "Your System is up-to-date! Goodjob!"
+  else
+    echo_alert "Your System is Out-of-Date!"
+    echo_alert 'Run `update` to bring it up to date.'
+    echo_alert "Remote Version: $INT_VERSION"
+    echo_alert "Inturnal Version: $EXT_VERSION"
+  fi
+}
+
+update_check_version_fix() { 
+  INT_VERSION=$(<"/.shell/VERSION")
+  EXT_VERSION=$(curl -s $VERSION_GITHUB_URL)
+  if [[ $INT_VERSION == $EXT_VERSION]]; then
+    echo_success "Your System is up-to-date! Goodjob!"
+  else
+    echo_alert "Your System is Out-of-Date!"
+    echo_alert 'Run `update` to bring it up to date.'
+    echo_alert "Remote Version: $INT_VERSION"
+    echo_alert "Inturnal Version: $EXT_VERSION"
+    echo_info "Updating now..."
+    backup_old_profiles_delete
+    curl -s https://raw.githubusercontent.com/BeauBouchard/dotfiles/main/.shell/setup/install/bash.sh | bash
+  fi
+}
+
+## Backup Old Bash Profiles
+# NOTE: 
+#   Since bash 5.0 (released on 7 Jan 2019) you can use the built-in variable EPOCHREALTIME which contains the seconds since the epoch
+#    - https://lists.gnu.org/archive/html/info-gnu/2019-01/msg00010.html
+backup_old_profiles() {
+  if [ -f "$BASH_PROFILE_FILE" ]; then
+    echo_info "Backing up ${BASH_PROFILE_FILE} to ${BASH_PROFILE_FILE}-${EPOCHREALTIME}.backup . . ."
+    cp -f $BASH_PROFILE_FILE "${BASH_PROFILE_FILE}-${EPOCHREALTIME}.backup"
+  else 
+    echo_alert "$BASH_PROFILE_FILE does not exist..."
+  fi
+
+  if [ -f "$BASHRC_FILE" ]; then
+    echo_info "Backing up ${BASHRC_FILE} to ${BASHRC_FILE}-${EPOCHREALTIME}.backup . . ."
+    cp -f $BASHRC_FILE "${BASHRC_FILE}-${EPOCHREALTIME}.backup"
+  else 
+    echo_alert "$BASHRC_FILE does not exist..."
+  fi
+}
+
+## Backup Old Bash Profiles AND delete the old ones
+# NOTE: 
+#   Since bash 5.0 (released on 7 Jan 2019) you can use the built-in variable EPOCHREALTIME which contains the seconds since the epoch
+#    - https://lists.gnu.org/archive/html/info-gnu/2019-01/msg00010.html
+backup_old_profiles_delete() {
+  if [ -f "$BASH_PROFILE_FILE" ]; then
+    echo_info "Backing up ${BASH_PROFILE_FILE} to ${BASH_PROFILE_FILE}-${EPOCHREALTIME}.backup . . ."
+    cp -f $BASH_PROFILE_FILE "${BASH_PROFILE_FILE}-${EPOCHREALTIME}.backup"
+    echo_info "Deleting up ${BASH_PROFILE_FILE} . . ."
+    rm -f $BASH_PROFILE_FILE
+    echo_success "Done . . ."
+  else 
+    echo_alert "$BASH_PROFILE_FILE does not exist..."
+  fi
+
+  if [ -f "$BASHRC_FILE" ]; then
+    echo_info "Backing up ${BASHRC_FILE} to ${BASHRC_FILE}-${EPOCHREALTIME}.backup . . ."
+    cp -f $BASHRC_FILE "${BASHRC_FILE}-${EPOCHREALTIME}.backup"
+    echo_info "Deleting up ${BASHRC_FILE} . . ."
+    rm -f $BASHRC_FILE
+    echo_success "Done . . ."
+  else 
+    echo_alert "$BASHRC_FILE does not exist..."
+  fi
+}
