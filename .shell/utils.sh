@@ -1,16 +1,14 @@
 #!/usr/bin/env bash
 
-
 # Number of seconds to wait before printing a reminder
-UPDATE_THRESHOLD="86400"
+readonly UPDATE_THRESHOLD="86400"
 readonly VERSION_GITHUB_URL="https://raw.githubusercontent.com/BeauBouchard/dotfiles/main/.shell/VERSION"
-readonly INT_VERSION=$(<~/.shell/VERSION)
-readonly EXT_VERSION=$(curl -s $VERSION_GITHUB_URL)
-
-
 readonly BASH_PROFILE_FILE=~/.bash_profile
 readonly BASHRC_FILE=~/.bash_profile
-readonly DFV=$(<~/.shell/VERSION)
+readonly VERSION_FILE~/.shell/VERSION
+readonly INT_VERSION=$(<$VERSION_FILE)
+readonly DFV=$INT_VERSION
+readonly EXT_VERSION=$(curl -s $VERSION_GITHUB_URL)
 
 # echo/color - echo color adds a color wrapper then resets
 # usage: echo/color <ANSII color code> <message to add color to>
