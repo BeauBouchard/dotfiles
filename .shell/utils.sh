@@ -5,6 +5,8 @@
 UPDATE_THRESHOLD="86400"
 VERSION_GITHUB_URL="https://raw.githubusercontent.com/BeauBouchard/dotfiles/main/.shell/VERSION"
 
+readonly BASH_PROFILE_FILE=~/.bash_profile
+readonly BASHRC_FILE=~/.bash_profile
 readonly DFV=$(<"/.shell/VERSION")
 
 # echo/color - echo color adds a color wrapper then resets
@@ -274,6 +276,53 @@ update_check_version_fix() {
     echo_alert "Remote Version: $INT_VERSION"
     echo_alert "Inturnal Version: $EXT_VERSION"
     echo_info "Updating now..."
+    backup_old_profiles_delete
     curl -s https://raw.githubusercontent.com/BeauBouchard/dotfiles/main/.shell/setup/install/bash.sh | bash
+  fi
+}
+
+## Backup Old Bash Profiles
+# NOTE: 
+#   Since bash 5.0 (released on 7 Jan 2019) you can use the built-in variable EPOCHREALTIME which contains the seconds since the epoch
+#    - https://lists.gnu.org/archive/html/info-gnu/2019-01/msg00010.html
+backup_old_profiles() {
+  if [ -f "$BASH_PROFILE_FILE" ]; then
+    echo_info "Backing up ${BASH_PROFILE_FILE} to ${BASH_PROFILE_FILE}-${EPOCHREALTIME}.backup . . ."
+    cp -f $BASH_PROFILE_FILE "${BASH_PROFILE_FILE}-${EPOCHREALTIME}.backup"
+  else 
+    echo_alert "$BASH_PROFILE_FILE does not exist..."
+  fi
+
+  if [ -f "$BASHRC_FILE" ]; then
+    echo_info "Backing up ${BASHRC_FILE} to ${BASHRC_FILE}-${EPOCHREALTIME}.backup . . ."
+    cp -f $BASHRC_FILE "${BASHRC_FILE}-${EPOCHREALTIME}.backup"
+  else 
+    echo_alert "$BASHRC_FILE does not exist..."
+  fi
+}
+
+## Backup Old Bash Profiles AND delete the old ones
+# NOTE: 
+#   Since bash 5.0 (released on 7 Jan 2019) you can use the built-in variable EPOCHREALTIME which contains the seconds since the epoch
+#    - https://lists.gnu.org/archive/html/info-gnu/2019-01/msg00010.html
+backup_old_profiles_delete() {
+  if [ -f "$BASH_PROFILE_FILE" ]; then
+    echo_info "Backing up ${BASH_PROFILE_FILE} to ${BASH_PROFILE_FILE}-${EPOCHREALTIME}.backup . . ."
+    cp -f $BASH_PROFILE_FILE "${BASH_PROFILE_FILE}-${EPOCHREALTIME}.backup"
+    echo_info "Deleting up ${BASH_PROFILE_FILE} . . ."
+    rm -f $BASH_PROFILE_FILE
+    echo_success "Done . . ."
+  else 
+    echo_alert "$BASH_PROFILE_FILE does not exist..."
+  fi
+
+  if [ -f "$BASHRC_FILE" ]; then
+    echo_info "Backing up ${BASHRC_FILE} to ${BASHRC_FILE}-${EPOCHREALTIME}.backup . . ."
+    cp -f $BASHRC_FILE "${BASHRC_FILE}-${EPOCHREALTIME}.backup"
+    echo_info "Deleting up ${BASHRC_FILE} . . ."
+    rm -f $BASHRC_FILE
+    echo_success "Done . . ."
+  else 
+    echo_alert "$BASHRC_FILE does not exist..."
   fi
 }
