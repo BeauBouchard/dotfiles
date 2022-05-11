@@ -263,4 +263,17 @@ update_check_version() {
   fi
 }
 
-
+update_check_version_fix() { 
+  INT_VERSION=$(<"/.shell/VERSION")
+  EXT_VERSION=$(curl -s $VERSION_GITHUB_URL)
+  if [[ $INT_VERSION == $EXT_VERSION]]; then
+    echo_success "Your System is up-to-date! Goodjob!"
+  else
+    echo_alert "Your System is Out-of-Date!"
+    echo_alert 'Run `update` to bring it up to date.'
+    echo_alert "Remote Version: $INT_VERSION"
+    echo_alert "Inturnal Version: $EXT_VERSION"
+    echo_info "Updating now..."
+    curl -s https://raw.githubusercontent.com/BeauBouchard/dotfiles/main/.shell/setup/install/bash.sh | bash
+  fi
+}
