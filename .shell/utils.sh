@@ -5,7 +5,7 @@ readonly UPDATE_THRESHOLD="86400"
 readonly VERSION_GITHUB_URL="https://raw.githubusercontent.com/BeauBouchard/dotfiles/main/.shell/VERSION"
 readonly BASH_PROFILE_FILE=~/.bash_profile
 readonly BASHRC_FILE=~/.bash_profile
-readonly VERSION_FILE~/.shell/VERSION
+readonly VERSION_FILE=~/.shell/VERSION
 readonly INT_VERSION=$(<$VERSION_FILE)
 readonly DFV=$INT_VERSION
 readonly EXT_VERSION=$(curl -s $VERSION_GITHUB_URL)
