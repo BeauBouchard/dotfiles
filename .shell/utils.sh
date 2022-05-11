@@ -7,7 +7,7 @@ VERSION_GITHUB_URL="https://raw.githubusercontent.com/BeauBouchard/dotfiles/main
 
 readonly BASH_PROFILE_FILE=~/.bash_profile
 readonly BASHRC_FILE=~/.bash_profile
-readonly DFV=$(<"/.shell/VERSION")
+readonly DFV=$(<"~/.shell/VERSION")
 
 # echo/color - echo color adds a color wrapper then resets
 # usage: echo/color <ANSII color code> <message to add color to>
