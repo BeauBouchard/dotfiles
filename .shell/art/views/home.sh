@@ -17,9 +17,9 @@ display_home_motd(){
   echo -e "${C_TWO}╚${C_ONE}███${C_TWO}╔${C_ONE}███${C_TWO}╔╝${C_ONE}██${C_TWO}║ ${C_ONE}██${C_TWO}║${C_ONE}██${C_TWO}║   ${C_ONE}██${C_TWO}║   ${C_ONE}███████${C_TWO}╗${C_ONE}██${C_TWO}║  ${C_ONE}██${C_TWO}║${C_ONE}██${C_TWO}║ ${C_ONE}██${C_TWO}║${C_ONE}██████${C_TWO}╔╝${C_ONE}██████${C_TWO}╔╝${C_ONE}██${C_TWO}║   ${C_ONE}██${C_TWO}║   "
   echo -e " ${C_TWO}╚══╝╚══╝ ╚═╝ ╚═╝╚═╝   ╚═╝   ╚══════╝╚═╝  ╚═╝╚═╝ ╚═╝╚═════╝ ╚═════╝ ╚═╝   ╚═╝   ${RESET}"
   echo -e "         : ┌─┐                                                       ┌─┐ :"
-  echo -ne "          └─│─┘            "
+  echo -ne "         └─│─┘            "
   echo -ne "${BWHITE}${ONRED}Standard Bash Shell Loaded ${RESET}${C_TWO}${ONWHITE}${DFV}${RESET}"
-  echo  "          └─│─┘"
+  echo  "           └─│─┘"
   echo -e "           └───────────────────────────────────────────────────────────┘"
 }
 
