@@ -62,7 +62,7 @@
   {
     "name": "pinned",
     "color": "#eeeeee",
-    "description": "The issue will not be marked by @miq-bot with the stale label",
+    "description": "The issue will not be marked with the stale label",
   },
   {
     "name": "question",
@@ -77,7 +77,7 @@
   {
     "name": "stale",
     "color": "#eeeeee",
-    "description": "The issue is old and hasn't had activity in 6 months. This label will be automatically applied by @miq-bot"
+    "description": "The issue is old and hasn't had activity in 6 months. This label will be automatically applied "
   },
   {
     "name": "technical debt",
@@ -97,7 +97,7 @@
   {
     "name": "unmergeable",
     "color": "#eeeeee",
-    "description": "The PR is unmergeable. This label is automatically applied and removed by @miq-bot"
+    "description": "The PR is unmergeable. This label is automatically applied and removed "
   },
   {
     "name": "verified",
@@ -107,11 +107,11 @@
   {
     "name": "wip",
     "color": "#eeeeee",
-    "description": "The PR is a WIP. This label is automatically applied and removed by @miq-bot based on PR title having [WIP] or not"
+    "description": "The PR is a WIP. This label is automatically applied and removed based on PR title having [WIP] or not"
   },
   {
     "name": "wontfix",
     "color": "#eeeeee",
-    "description": "The issue will not be fixed or otherwise handled. When applied, the issue should be closed", 
+    "description": "The issue will not be fixed or otherwise handled. When applied, the issue should be closed",
   }
 ]

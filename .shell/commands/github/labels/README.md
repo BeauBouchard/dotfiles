@@ -1,10 +1,25 @@
 # Github Label Command For Bash
 
 
-Below are charts describing all of the common labels and colors across the many orginization repos.
 
+### Usage
+
+## Create a new label
+
+There is an example labels.json file which you can use and update to add your own labels. It will delete all existing labels for the repo, and then it will upload the list from the labels.json file.
+
+
+You can just run the command with no arguments to see the usage.
+
+
+```bash
+		labels.sh
+```
 
 ### The Labels
+
+Below are charts describing all of the common labels and colors across the many orginization repos.
+
 
 Label | Color | Hex | Description
 --- | --- | --- | ---
