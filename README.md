@@ -30,3 +30,10 @@ curl -s https://raw.githubusercontent.com/BeauBouchard/dotfiles/main/.shell/setu
 ```
 curl -s https://raw.githubusercontent.com/BeauBouchard/dotfiles/main/.shell/setup/install/bash_home.sh | bash
 ```
+
+
+## Commands
+
+There are a few utilities in bash native that can be used.
+
+* [labels.sh]() - rewrites the github labels on a given repo from a template. 
