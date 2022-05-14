@@ -36,4 +36,4 @@ curl -s https://raw.githubusercontent.com/BeauBouchard/dotfiles/main/.shell/setu
 
 There are a few utilities in bash native that can be used.
 
-* [labels.sh]() - rewrites the github labels on a given repo from a template. 
+* [labels.sh](https://github.com/BeauBouchard/dotfiles/tree/main/.shell/commands/github/labels) - rewrites the github labels on a given repo from a template. 
