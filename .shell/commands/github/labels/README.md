@@ -13,8 +13,12 @@ You can just run the command with no arguments to see the usage.
 
 
 ```bash
-		labels.sh
+  labels.sh
 ```
+
+The script will then use a github token, and ask you for the  org name and which repo to target.
+
+After you enter those it will run till the labels are made. 
 
 ### The Labels
 
