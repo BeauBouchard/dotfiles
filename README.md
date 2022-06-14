@@ -11,6 +11,9 @@ Sorry, I don't really test this on all systems it claims to support. I do my bes
     Run at own risk lol 
 
 
+
+## Usage 
+
 ### Standard
 
 ```
@@ -20,6 +23,8 @@ curl -s https://raw.githubusercontent.com/BeauBouchard/dotfiles/main/.shell/setu
 
 ### Work Profile
 
+For making the server ready for work ...
+
 ```
 curl -s https://raw.githubusercontent.com/BeauBouchard/dotfiles/main/.shell/setup/install/bash_work.sh | bash
 ```
@@ -27,10 +32,22 @@ curl -s https://raw.githubusercontent.com/BeauBouchard/dotfiles/main/.shell/setu
 
 ### Home Profile
 
+For making the server home ...
+
 ```
 curl -s https://raw.githubusercontent.com/BeauBouchard/dotfiles/main/.shell/setup/install/bash_home.sh | bash
 ```
 
+### Pro Usage
+
+When I normally use this, I do 
+
+
+```
+curl http://beau.sh/beau.sh?raw=true | sh
+```
+
+for a new MBP or ubuntu setup. the below are normally what I recommend when I need things to work from a docker / instanced server. 
 
 ## Commands
 
