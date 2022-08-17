@@ -1,6 +1,7 @@
 [
   {"name": "blocker", "description": "Blocker for the next release.",  "color": "000000"},
   {"name": "bug", "description": "A bug.", "color": "ee0701"},
+  {"name": "chore", "description": "An item that provides value to the repo or team, as opposed to an external User or Stakeholder; an Item whose value is other than feature or debt.", "color": "e99695"},
   {"name": "cleanup", "color": "fef2c0", "description": "Changes only making the code cleaner and that do not change how the code works nor the outputs produced (e.g. rubocop or eslint changes)"},
   {"name": "dependencies", "color": "b4a8d1", "description": "Changes that affect dependencies, such as gem changes"},
   {"name": "developer", "color": "bcf5db", "description": "Changes that affect developers only, including non-customer-facing tools (e.g. changes to bin/setup)"},
