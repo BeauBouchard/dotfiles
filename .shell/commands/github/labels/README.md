@@ -2,9 +2,11 @@
 
 
 
-### Usage
+## Usage
 
-## Create a new label
+You will need to set the variable `GITHUBTOKEN` which will be set from the environment variables in a super script, but for independant running it will need to be set manually. 
+
+### Create a new label
 
 There is an example labels.json file which you can use and update to add your own labels. It will delete all existing labels for the repo, and then it will upload the list from the labels.json file.
 
