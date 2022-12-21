@@ -278,6 +278,17 @@ update_check_version_fix() {
   fi
 }
 
+## kill all of a process
+# kill $(ps aux | grep '[p]ython csp_build.py' | awk '{print $2}')
+kill_all_proc() {
+  if [[ $# -eq 0 ]]; then
+    echo "kill all of a process"
+    echo "killall: $(basename $0) <process>"
+  else
+  
+  fi
+}
+
 ## Backup Old Bash Profiles
 # NOTE: 
 #   Since bash 5.0 (released on 7 Jan 2019) you can use the built-in variable EPOCHREALTIME which contains the seconds since the epoch
