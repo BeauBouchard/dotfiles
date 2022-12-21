@@ -279,13 +279,13 @@ update_check_version_fix() {
 }
 
 ## kill all of a process
-# kill $(ps aux | grep '[p]ython csp_build.py' | awk '{print $2}')
+# questions/3510673
 kill_all_proc() {
   if [[ $# -eq 0 ]]; then
     echo "kill all of a process"
     echo "killall: $(basename $0) <process>"
   else
-  
+    kill $(ps aux | grep '{$1}' | awk '{print $2}')
   fi
 }
 
