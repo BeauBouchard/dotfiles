@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+source ~/.shell/utils.sh
+
 ## install ulauncher
 echo "installing ulauncher . . . " 
 
