@@ -1,14 +1,14 @@
 ## install ulauncher
 echo "installing ulauncher . . . " && \ 
 
-
 ## install steam 
 if ! command -v ulauncher &> /dev/null; then
-  if [[ "$OSTYPE" == "linux-gnu"* ] || [ "$OSTYPE" == "linux"* ]]; then
+  if [[ "$OSTYPE" == "linux"* ]]; then
     echo_info "Detected ${OSTYPE} ... Installing ulauncher for Linux ..."
     # linux and most distros
     sudo add-apt-repository ppa:agornostal/ulauncher && sudo apt update && sudo apt install ulauncher
-  elif [[ "$OSTYPE" == "bsd"* ] || [ "$OSTYPE" == "freebsd"* ]]; then
+  elif [[ "$OSTYPE" == "bsd"* ]]; then
+  # elif [[ "$OSTYPE" == "freebsd"* ]]; then
     echo_info "Detected ${OSTYPE} ... Installing ulauncher for BSD ..."
     # bsd
     pkg install ulauncher
