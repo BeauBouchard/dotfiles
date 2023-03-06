@@ -44,7 +44,7 @@ When I normally use this, I do
 
 
 ```bash
-curl http://beau.sh/beau.sh?raw=true | sh
+curl http://beau.sh/beau.sh?raw=true -L | bash
 ```
 
 for a new MBP or ubuntu setup. the below are normally what I recommend when I need things to work from a docker / instanced server. 
