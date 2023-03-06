@@ -9,4 +9,4 @@ source ~/.shell/setup/install/steam.sh && \
 source ~/.shell/setup/install/ulauncher.sh && \ 
 source ~/.shell/setup/install/nvm.sh && \
 source ~/.bashrc && \
-echo "stetup complete"
+echo "setup complete"
