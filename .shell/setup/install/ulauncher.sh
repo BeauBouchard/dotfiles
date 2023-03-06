@@ -1,5 +1,7 @@
+#!/usr/bin/env bash
+
 ## install ulauncher
-echo "installing ulauncher . . . " && \ 
+echo "installing ulauncher . . . " 
 
 ## install steam 
 if ! command -v ulauncher &> /dev/null; then
