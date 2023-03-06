@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+echo "installing steam . . . " 
 
 ## install steam 
 if ! command -v steam &> /dev/null; then
