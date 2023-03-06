@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+
+source ~/.shell/utils.sh
+
 echo "installing steam . . . " 
 
 ## install steam 
