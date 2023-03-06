@@ -1,10 +1,11 @@
 ## install steam 
 if ! command -v steam &> /dev/null; then
-  if [[ "$OSTYPE" == "linux-gnu"* ] || [ "$OSTYPE" == "linux"* ]]; then
+  if [[ "$OSTYPE" == "linux"* ]]; then
     echo_info "Detected ${OSTYPE} ... Installing Steam for Linux ..."
     # linux and most distros
     sudo add-apt-repository multiverse && sudo apt update  && sudo apt install steam
-  elif [[ "$OSTYPE" == "bsd"* ] || [ "$OSTYPE" == "freebsd"* ]]; then
+  elif [[ "$OSTYPE" == "bsd"* ]]; then
+  # elif [[ "$OSTYPE" == "freebsd"* ]]; then
     echo_info "Detected ${OSTYPE} ... Installing Steam for BSD ..."
     # bsd
     pkg install steam
