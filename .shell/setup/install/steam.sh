@@ -2,8 +2,6 @@
 
 source ~/.shell/utils.sh
 
-echo "installing steam . . . " 
-
 ## install steam 
 if ! command -v steam &> /dev/null; then
   if [[ "$OSTYPE" == "linux"* ]]; then
