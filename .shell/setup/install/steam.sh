@@ -24,5 +24,5 @@ if ! command -v steam &> /dev/null; then
     echo "ERROR: Unknown OS ${OSTYPE}"
   fi
 else
-  echo "Steam Intalled already"
+  echo "Steam Installed already"
 fi
