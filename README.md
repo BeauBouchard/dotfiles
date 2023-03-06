@@ -16,7 +16,7 @@ Sorry, I don't really test this on all systems it claims to support. I do my bes
 
 ### Standard
 
-```
+```sh
 curl -s https://raw.githubusercontent.com/BeauBouchard/dotfiles/main/.shell/setup/install/bash.sh | bash
 ```
 
@@ -25,7 +25,7 @@ curl -s https://raw.githubusercontent.com/BeauBouchard/dotfiles/main/.shell/setu
 
 For making the server ready for work ...
 
-```
+```sh
 curl -s https://raw.githubusercontent.com/BeauBouchard/dotfiles/main/.shell/setup/install/bash_work.sh | bash
 ```
 
@@ -34,7 +34,7 @@ curl -s https://raw.githubusercontent.com/BeauBouchard/dotfiles/main/.shell/setu
 
 For making the server home ...
 
-```
+```bash
 curl -s https://raw.githubusercontent.com/BeauBouchard/dotfiles/main/.shell/setup/install/bash_home.sh | bash
 ```
 
@@ -43,7 +43,7 @@ curl -s https://raw.githubusercontent.com/BeauBouchard/dotfiles/main/.shell/setu
 When I normally use this, I do 
 
 
-```
+```bash
 curl http://beau.sh/beau.sh?raw=true | sh
 ```
 
