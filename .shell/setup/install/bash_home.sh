@@ -8,4 +8,5 @@ echo "display_home_motd" >> tee ~/.bash_profile | tee ~/.bashrc && \
 source ~/.shell/utils.sh && \ 
 source ~/.shell/setup/install/steam.sh && \ 
 source ~/.shell/setup/install/ulauncher.sh && \ 
-source ~/.shell/setup/install/nvm.sh 
+source ~/.shell/setup/install/nvm.sh && \
+echo "stetup complete"
