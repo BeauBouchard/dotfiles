@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 ## install steam 
 if ! command -v steam &> /dev/null; then
   if [[ "$OSTYPE" == "linux"* ]]; then
