@@ -2,10 +2,7 @@
 
 source ~/.shell/utils.sh
 
-## install ulauncher
-echo "installing ulauncher . . . " 
-
-## install steam 
+## install ulauncher 
 if ! command -v ulauncher &> /dev/null; then
   if [[ "$OSTYPE" == "linux"* ]]; then
     echo_info "Detected ${OSTYPE} ... Installing ulauncher for Linux ..."
