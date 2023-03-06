@@ -1,4 +1,3 @@
-
 #!/usr/bin/env bash
 
 ## install nvm 
@@ -35,5 +34,5 @@ if ! command -v nvm &> /dev/null; then
     echo "ERROR: Unknown OS ${OSTYPE}"
   fi
 else
-  echo "NVM Intalled already"
+  echo "NVM Installed already"
 fi
