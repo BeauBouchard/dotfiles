@@ -24,5 +24,5 @@ if ! command -v ulauncher &> /dev/null; then
     echo "ERROR: Unknown OS ${OSTYPE}"
   fi
 else
-  echo "ulauncher Intalled already"
+  echo "ulauncher installed already"
 fi
