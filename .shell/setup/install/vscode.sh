@@ -32,15 +32,15 @@ if ! command -v code &> /dev/null; then
   # elif [[ "$OSTYPE" == "freebsd"* ]]; then
     echo "Detected ${OSTYPE} ... Installing VSCode for BSD ..."
     # bsd
-    pkg install ulauncher
+    pkg install code
   elif [[ "$OSTYPE" == "darwin"* ]]; then
     echo "Detected ${OSTYPE} ... Installing VSCode for Mac OSX ..."
     # Mac OSX
-    brew install ulauncher
+    brew install code
   elif [[ "$OSTYPE" == "cygwin" ]]; then
     echo "Detected ${OSTYPE} ... Installing VSCode for Cygwin / Windows ..."
     # POSIX compatibility layer and Linux environment emulation for Windows
-    chocolatey install ulauncher
+    chocolatey install code
   else
     # Unknown.
     echo "ERROR: Unknown OS ${OSTYPE}"
