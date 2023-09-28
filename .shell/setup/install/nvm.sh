@@ -9,13 +9,12 @@ if ! command -v nvm &> /dev/null; then
 
     echo " "
     echo "\# NVM Stuff "
-    echo "export NVM_DIR=\"$HOME/.nvm\"" >> .bash_profile
-    echo "[ -s \"$NVM_DIR/nvm.sh\" ] && \. \"$NVM_DIR/nvm.sh\"" >> .bash_profile
-    echo "[ -s \"$NVM_DIR/bash_completion\" ] && \. \"$NVM_DIR/bash_completion\"" >> .bash_profile
+    echo "export NVM_DIR=\"$([ -z \"${XDG_CONFIG_HOME-}\" ] && printf %s \"${HOME}/.nvm\" || printf %s \"${XDG_CONFIG_HOME}/nvm\")\"" >> .bash_profile 
+    echo "[ -s \"$NVM_DIR/nvm.sh\" ] && \. \"$NVM_DIR/nvm.sh\"" >> .bash_profile # This loads nvm
 
-    echo "export NVM_DIR=\"$HOME/.nvm\"" >> .bashrc
-    echo "[ -s \"$NVM_DIR/nvm.sh\" ] && \. \"$NVM_DIR/nvm.sh\"" >> .bashrc
-    echo "[ -s \"$NVM_DIR/bash_completion\" ] && \. \"$NVM_DIR/bash_completion\"" >> .bashrc
+    echo "export NVM_DIR=\"$([ -z \"${XDG_CONFIG_HOME-}\" ] && printf %s \"${HOME}/.nvm\" || printf %s \"${XDG_CONFIG_HOME}/nvm\")\"" >> .bashrc 
+    echo "[ -s \"$NVM_DIR/nvm.sh\" ] && \. \"$NVM_DIR/nvm.sh\"" >> .bashrc # This loads nvm 
+
   elif [[ "$OSTYPE" == "bsd"* ]]; then
   # elif [[ "$OSTYPE" == "freebsd"* ]]; then
     echo "Detected ${OSTYPE} ... Installing NVM for BSD ..."
