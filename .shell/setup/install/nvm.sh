@@ -5,7 +5,7 @@ if ! command -v nvm &> /dev/null; then
   if [[ "$OSTYPE" == "linux"* ]]; then
     echo "Detected ${OSTYPE} ... Installing NVM for Linux ..."
     # linux and most distros
-    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
 
     echo " "
     echo "\# NVM Stuff "
