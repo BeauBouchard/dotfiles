@@ -248,7 +248,7 @@ update_check_time() {
 
   if [ "$time_since_check" -ge "$UPDATE_THRESHOLD" ]; then
     echo_alert "$cred==>$cemph Your system is out of date!$cnone"
-    echo_alert 'Run `update` to bring it up to date.'
+    echo_alert 'Run `update_check_version_fix` to bring it up to date.'
   fi
 }
 
@@ -258,7 +258,7 @@ update_check_version() {
     echo_success "Your System is up-to-date! Goodjob!"
   else
     echo_alert "Your System is Out-of-Date!"
-    echo_alert 'Run `update` to bring it up to date.'
+    echo_alert 'Run `update_check_version_fix` to bring it up to date.'
     echo_alert "Remote Version: $INT_VERSION"
     echo_alert "Inturnal Version: $EXT_VERSION"
   fi
@@ -273,7 +273,7 @@ update_check_version_fix() {
     echo_alert "Remote Version: $INT_VERSION"
     echo_alert "Inturnal Version: $EXT_VERSION"
     echo_info "Updating now..."
-    backup_old_profiles_delete
+    backup_old_profiles_delete && 
     curl -s https://raw.githubusercontent.com/BeauBouchard/dotfiles/main/.shell/setup/install/bash.sh | bash
   fi
 }
