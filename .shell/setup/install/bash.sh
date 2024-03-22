@@ -7,7 +7,7 @@ cd ~/.shell && { curl -O -s https://raw.githubusercontent.com/BeauBouchard/dotfi
 cd ~/.shell && { curl -O -s https://raw.githubusercontent.com/BeauBouchard/dotfiles/main/.shell/env.sh ;} && \
 cd ~/.shell && { curl -O -s https://raw.githubusercontent.com/BeauBouchard/dotfiles/main/.shell/VERSION ;} && \
 cd ~/.shell/art/views && { curl -O -s https://raw.githubusercontent.com/BeauBouchard/dotfiles/main/.shell/art/views/home.sh ;} && \
-cd ~/.shell/art && { curl -O -s https://raw.githubusercontent.com/BeauBouchard/dotfiles/main/.shell/art/bee.sh ;} && \
+cd ~/.shell/art && { curl -O -s https://raw.githubusercontent.com/BeauBouchard/dotfiles/main/.shell/art/sage.sh ;} && \
 cd ~/.shell/setup && { curl -O -s https://raw.githubusercontent.com/BeauBouchard/dotfiles/main/.shell/setup/ps1.sh ;} && \
 cd ~/.shell/setup && { curl -O -s https://raw.githubusercontent.com/BeauBouchard/dotfiles/main/.shell/setup/colors.sh ;} && \
 cd ~/.shell/setup && { curl -O -s https://raw.githubusercontent.com/BeauBouchard/dotfiles/main/.shell/setup/alias.sh ;} && \
