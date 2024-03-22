@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+
+# description:  This is the default Message Of The Day (MOTD) view
+#               It is displayed when the user logs in from ../utils/utils.sh .
+display_home_motd(){
+  echo -e "         ┌───────────────────────────────────────────────────────────────┐"
+  echo -e "         :                            ${BYELLOW}///////${RESET}                            :"                          
+  echo -e "                                  ${BYELLOW}*///// //////${RESET}                          "
+  echo -e "                               ${BYELLOW} /////*     */////${RESET}                        "
+  echo -e "                             ${BYELLOW}*/////           //////${RESET}                     "
+  echo -e "                           ${BYELLOW}/////*               */////${RESET}                   "
+  echo -e "                        ${BYELLOW}/////             ${BWHITE}//${RESET}       ${BYELLOW}/////${RESET}                 "
+  echo -e "                       ${BYELLOW}/////            ${BWHITE}.////${RESET}        ${BYELLOW}/////${RESET}               "
+  echo -e "                     ${BYELLOW}/////             ${BWHITE},//,/,${RESET}          ${BYELLOW}/////${RESET}             "
+  echo -e "                    ${BYELLOW}////*              ${BWHITE}*// //${RESET}           ${BYELLOW}*////${RESET}            "
+  echo -e "                   ${BYELLOW}////               ${BWHITE}///  //${RESET}             ${BYELLOW}////${RESET}           "
+  echo -e "                  ${BYELLOW}////               ${BWHITE}///   //${RESET}              ${BYELLOW}////${RESET}          "
+  echo -e "                ${BYELLOW} ////               ${BWHITE}//*    ///////${RESET}          ${BYELLOW}////${RESET}         "
+  echo -e "                 ${BYELLOW}////              ${BWHITE}//,         ///${RESET}          ${BYELLOW}////${RESET}         "
+  echo -e "                 ${BYELLOW}////             ${BWHITE}//.  ,/     //.${RESET}           ${BYELLOW}////${RESET}         "
+  echo -e "                 ${BYELLOW}////.           ${BWHITE} ,//. //   .//${RESET}            ${BYELLOW}.////${RESET}         "
+  echo -e "                  ${BYELLOW}////                ${BWHITE},/,  //*${RESET}             ${BYELLOW}////${RESET}          "
+  echo -e "                   ${BYELLOW}////,              ${BWHITE}//  //${RESET}             ${BYELLOW},////${RESET}           "
+  echo -e "                    ${BYELLOW}/////            ${BWHITE},/////${RESET}             ${BYELLOW}/////${RESET}            "
+  echo -e "                      ${BYELLOW}//////         ${BWHITE}////${RESET}            ${BYELLOW}//////${RESET}              "
+  echo -e "                        ${BYELLOW},//////.                 .//////,${RESET}                "
+  echo -e "                            ${BYELLOW}/////////////////////////${RESET}                    "
+  echo -e "                                 ${BYELLOW}///////////////${RESET}                         "
+  echo -e "                                      ${BYELLOW}.///,${RESET}                              "
+  echo -e "                                      ${BYELLOW}.///,${RESET}                              "
+  echo -e "         : ┌─┐                        ${BYELLOW}.///.${RESET}                          ┌─┐ :"
+  echo -ne "         └─│─┘         "
+  echo -ne "${BWHITE}${ONRED}EnergySage Standard Shell Loaded ${RESET}${BYELLOW}${ONWHITE}${ESDFV}${RESET}" 
+  echo  "       └─│─┘"
+  echo -e "           └───────────────────────────────────────────────────────────┘"
+}
